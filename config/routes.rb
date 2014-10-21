@@ -25,6 +25,7 @@ devise_for :users do
   get "bartenders/index"
   get "chefs/index"
   get '/cuentas' => 'managers#cuentas'
+  get '/mesas' => 'helpers#mesas'
 
   get '/cuentas/user/role_admi/:id' => 'managers#role_admi', :as => 'role_admi'
   get '/cuentas/user/role_asistente/:id' => 'managers#role_asistente', :as => 'role_asistente'

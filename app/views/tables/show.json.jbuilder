@@ -1,1 +1,1 @@
-json.extract! @table, :id, :status, :created_at, :updated_at
+json.extract! @table, :id, :state, :created_at, :updated_at

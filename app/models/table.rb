@@ -1,8 +1,8 @@
 class Table < ActiveRecord::Base
-	validates :status, presence: {:message => "No puede estar vacio"}
+	validates :state, presence: {:message => "No puede estar vacio"}
 
 	def free
-		self.status = 'libre'
+		self.state = 'libre'
 		self.save!
 	end
 end

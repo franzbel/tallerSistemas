@@ -15,7 +15,7 @@
     <% @tables.each do |table| %>
       <tr>
         <td><%= table.id %></td>
-        <td><%= table.status %></td>
+        <td><%= table.state %></td>
         <td><%= link_to 'Mostrar', table %></td>
         <td><%= link_to 'Editar', edit_table_path(table) %></td>
         <td><%= link_to 'Eliminar', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,29 @@
+<h1>Lista de Mesas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tables.each do |table| %>
+      <tr>
+        <td><%= table.id %></td>
+        <td><%= table.status %></td>
+        <td><%= link_to 'Mostrar', table %></td>
+        <td><%= link_to 'Editar', edit_table_path(table) %></td>
+        <td><%= link_to 'Eliminar', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Mesa', new_table_path %>

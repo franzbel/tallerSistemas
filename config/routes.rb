@@ -1,5 +1,6 @@
 Fogondemaria::Application.routes.draw do
-  root 'waiters#index'
+  
+  get "welcome/index"
   get "waiters/index"
   get "helpers/index"
   get "bartenders/index"

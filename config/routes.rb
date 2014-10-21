@@ -11,6 +11,13 @@ devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+
+  post '/user/save' => 'managers#save'
+  get '/users/create_user' => 'managers#create_user'
+  post '/user' => 'users#create'
+
+  get '/users/show_user/:id' => 'managers#show_user'
+  get '/users/edit_user/:id' => 'managers#edit_user'
  
   root "welcome#index"
   get "waiters/index"

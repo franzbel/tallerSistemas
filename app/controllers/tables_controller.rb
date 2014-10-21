@@ -17,6 +17,7 @@ class TablesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to "/tables/index" }
       format.json { head :no_content }
+    end
   end
 
   # GET /tables/new

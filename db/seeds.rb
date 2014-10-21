@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# USUARIOS
+
 main_admin = User.create(:email => 'admin@gmail.com', :password => '12345678', 
        :password_confirmation => '12345678', :name => 'admin', :role => 'admin')
 main_admin = User.create(:email => 'asistente@gmail.com', :password => '12345678', 
@@ -16,3 +18,12 @@ main_admin = User.create(:email => 'mesero@gmail.com', :password => '12345678',
        :password_confirmation => '12345678', :name => 'mesero', :role => 'mesero')
 main_admin = User.create(:email => 'chef@gmail.com', :password => '12345678', 
        :password_confirmation => '12345678', :name => 'chef', :role => 'chef')
+
+# MENU COMIDAS
+
+comidas = FoodMenu.create([{ name: 'Pique Macho', photo: 'pique.jpg', 
+		description: 'Carne de res, salchicha, papas, huevo, rodajas de pimiento y tomate', price: 50},
+	{name: 'Charque', photo: 'charque.jpg',
+		description: 'Carne de res deshidratada, papas, maiz, huevo, queso', price: 35},
+	{name: 'Lapping', photo: 'lapping.jpg',
+		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40}])

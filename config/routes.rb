@@ -1,5 +1,7 @@
 Fogondemaria::Application.routes.draw do
 
+  get "managers/index"
+  resources :tables
 
 devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'

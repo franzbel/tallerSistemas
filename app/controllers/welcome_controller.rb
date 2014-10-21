@@ -12,6 +12,9 @@ class WelcomeController < ApplicationController
         if user_signed_in? && current_user.email == 'ayudante@gmail.com'
      	 redirect_to '/helpers/index'
         end
+        if user_signed_in? && current_user.email == 'admin@gmail.com'
+     	 redirect_to '/managers/index'
+        end
   end
 
 end

@@ -1,0 +1,31 @@
+<% if @user.errors.any? %>
+<%= @user.errors.full_messanges.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+<% end %>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title"></h3>
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <div class="form-group">
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @user.role %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+    </div>
+    </div>
+  </div>
+</div>

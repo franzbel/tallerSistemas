@@ -1,8 +1,21 @@
 class ManagersController < ApplicationController
+   skip_before_filter :verify_authenticity_token
+
+
   def index
   end
   def cuentas
     @users = User.all
+        if current_user.role == 'admin'
+     
+     if params[:search]
+      @users = User.search(params[:search])
+    else
+      @users = User.all  
+    end
+   else
+    redirect_to '/cuentas'
+   end
   end
 
   def role_admi
@@ -38,6 +51,56 @@ def role_chef
     @user.role = 'chef'
     @user.save
     redirect_to :back
+  end
+
+  def buscar_cuentas
+    if current_user.role == 'admin'
+     
+     if params[:search]
+      @users = User.search(params[:search])
+    else
+      @users = User.all  
+    end
+   else
+    redirect_to '/cuentas'
+   end
+  end
+
+
+
+
+  def remove
+    @user=User.find(params[:id])
+    @user.destroy
+    redirect_to :back
+  end
+
+  def save
+      @users=User.all
+      @user=User.new
+      @user.email=params[:email]
+      @user.password=params[:password]
+      @user.role=params[:role]
+      @user.name = params[:name]
+      @users.each do |user|
+       if @user.email == user.email
+        create_user
+       end
+      end
+      @user.save
+      redirect_to '/cuentas'
+  end
+
+  def edit_user
+    @user=User.find(params[:id])
+  end
+
+    def show_user
+    @user=User.find(params[:id])
+  end
+
+  def create_user
+    @user=User.new
   end
 
 

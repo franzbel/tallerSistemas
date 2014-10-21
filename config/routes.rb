@@ -1,7 +1,19 @@
 Fogondemaria::Application.routes.draw do
+
   get "managers/index"
   resources :tables
 
+devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+ 
+  root "welcome#index"
+  get "waiters/index"
+  get "helpers/index"
+  get "bartenders/index"
+  get "chefs/index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

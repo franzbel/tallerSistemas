@@ -108,7 +108,7 @@ def serving_food
   end
 	def set_table
 	  	@mesa = Table.find(params[:id])
-	  	@mesa.state = "Limpieza"
+	  	@mesa.state = "limpieza"
 	  	@mesa.save
 	  	redirect_to waiters_index_path
 	end

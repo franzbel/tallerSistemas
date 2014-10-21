@@ -1,0 +1,33 @@
+<h1>Lista de Menu de Bebidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Foto</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drink_menus.each do |drink_menu| %>
+      <tr>
+        <td><%= drink_menu.name %></td>
+        <td><%= drink_menu.photo %></td>
+        <td><%= drink_menu.description %></td>
+        <td><%= drink_menu.price %></td>
+        <td><%= link_to 'Mostrar', drink_menu %></td>
+        <td><%= link_to 'Editar', edit_drink_menu_path(drink_menu) %></td>
+        <td><%= link_to 'Eliminar', drink_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Drink menu', new_drink_menu_path %>

@@ -1,5 +1,9 @@
 Fogondemaria::Application.routes.draw do
 
+  resources :drink_menus
+
+  resources :food_menus
+
   get "managers/index"
   resources :tables
 

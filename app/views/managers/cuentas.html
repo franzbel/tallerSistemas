@@ -1,0 +1,57 @@
+<h1>Gestionar Cuentas</h1>
+
+<center>
+
+<h1><b>Cuentas</b></h1>
+
+<div class="panel panel-success">
+
+      <table class="table table-striped"><thead>
+          <tr class="info">
+       
+          <td><b>Email</b></td>
+          <th></th>
+          <td><b>Rol</b></td>
+          <td></td>
+          <td><b>Cambiar Rol</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b align ="center">Opciones</b></td>
+
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+          <% @users.each do |user| %>
+          <tr>
+            <% if user.role != 'admin' %>
+              <td><%= user.email %></td> 
+              <td></td>
+              <td><%= user.role%></td>
+              
+              <td><h5><a href= "<%=role_asistente_path(user.id) %>"class="btn btn-info"><b>Asistente</b></h5></a></td>  
+              <td><h5><a href= "<%=role_barman_path(user.id) %>"class="btn btn-success"><b>Barman</b></h5></a></td>  
+              <td><h5><a href= "<%=role_mesero_path(user.id) %>"class="btn btn-default"><b>Mesero</b></h5></a></td> 
+              <td><h5><a href= "<%=role_chef_path(user.id) %>"class="btn btn-primary"><b>Chef</b></h5></a></td>  
+            
+
+              <td></td> 
+              <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-info"><b>Ver Usuario</b></h5></a></td>
+              <td><h5><a href= "/users/remove/<%=user.id%>" class="btn btn-danger"><b>Eliminar</b></h5></a></td>
+              <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-warning"><b>Editar</b></h5></a></td>  
+            <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+</div>
+
+
+</center>

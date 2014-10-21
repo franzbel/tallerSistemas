@@ -1,0 +1,33 @@
+<h1>Lista Menu de Comidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Foto</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_menus.each do |food_menu| %>
+      <tr>
+        <td><%= food_menu.name %></td>
+        <td><%= food_menu.photo %></td>
+        <td><%= food_menu.description %></td>
+        <td><%= food_menu.price %></td>
+        <td><%= link_to 'Mostrar', food_menu %></td>
+        <td><%= link_to 'Editar', edit_food_menu_path(food_menu) %></td>
+        <td><%= link_to 'Eliminar', food_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Menu Comida', new_food_menu_path %>

@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021145717) do
+ActiveRecord::Schema.define(version: 20141021193905) do
+
+  create_table "drink_menus", force: true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.text     "description"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "food_menus", force: true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.text     "description"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tables", force: true do |t|
     t.string   "status"

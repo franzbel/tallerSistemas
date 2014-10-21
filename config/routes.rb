@@ -1,10 +1,12 @@
 Fogondemaria::Application.routes.draw do
 
+
 devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  root '/welcome'
+ 
+  root "welcome#index"
   get "waiters/index"
   get "helpers/index"
   get "bartenders/index"

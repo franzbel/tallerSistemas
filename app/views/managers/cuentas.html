@@ -3,6 +3,19 @@
 <center>
 
 <h1><b>Cuentas</b></h1>
+<br>
+<a href= "/users/create_user" class="btn btn-success active"><h5><b> -Crear Usuario-</b></h5></a>
+<br>
+
+<DIV ALIGN=right><p id="notice"><%= notice%></p>
+    <%= form_tag '/cuentas', :method => 'get' do %>
+      <h2><b><%= label_tag "Buscar Usuario   " %></b></h2>
+      <h5><%= text_field_tag :search %>
+      <%= submit_tag "Buscar", :name => nil, :class => 'btn' %></h5> 
+<% end %>
+
+</DIV>
+
 
 <div class="panel panel-success">
 
@@ -13,11 +26,11 @@
           <th></th>
           <td><b>Rol</b></td>
           <td></td>
-          <td><b>Cambiar Rol</b></td>
+          <td></td>
+          <td><b align ="center">Asignar Rol</b></td>
           <td></td>
           <td></td>
-          <td></td>
-          <td></td>
+          <td></td>	
           <td><b align ="center">Opciones</b></td>
 
             <th></th>
@@ -40,9 +53,8 @@
               <td><h5><a href= "<%=role_mesero_path(user.id) %>"class="btn btn-default"><b>Mesero</b></h5></a></td> 
               <td><h5><a href= "<%=role_chef_path(user.id) %>"class="btn btn-primary"><b>Chef</b></h5></a></td>  
             
-
               <td></td> 
-              <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-info"><b>Ver Usuario</b></h5></a></td>
+              <td><h5><a href= "/users/show_user/<%=user.id%>" class="btn btn-info"><b>Ver Usuario</b></h5></a></td>
               <td><h5><a href= "/users/remove/<%=user.id%>" class="btn btn-danger"><b>Eliminar</b></h5></a></td>
               <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-warning"><b>Editar</b></h5></a></td>  
             <% end %>

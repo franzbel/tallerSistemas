@@ -2,10 +2,127 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-	background-color: #FFCC66;
+	background-color: #D4FFD4;
 }
 
+#cabezaTabla {
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(145,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(0, 0, 0) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #55FF2A); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+	float:left;
+}
+#pedido{
+	display: block;
+	width: 1px;
+	margin: 1px auto;
+	padding: 1px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(145,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(0, 0, 0) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #55FF2A); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+}
 
+#pedidoListo{
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(145,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(0, 0, 0) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #55FF2A); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #55FF2A);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+}
+#pedidoProceso{
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(255,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(25, 42, 42) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #FF0000); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #FF0000);
+	background: -ms-radial-gradient(center, circle, #0FFFFF, #FF0000);
+	background: -o-radial-gradient(center, circle, #0FFFFF, #FF0000);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#mesaOcupada {
+	display: block;
+	width: 40px;
+	margin: 10px auto;
+	padding: 25px;
+	text-align: center;
+	font: bold 66px mifuente, verdana, sans-serif;
+	border: 1px solid #FF0000;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 3px 3px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #FF0000); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #FF0000);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #FF0000);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #FF0000);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+}
+#mesaLimpieza {
+	display: block;
+	width: 40px;
+	margin: 10px auto;
+	padding: 25px;
+	text-align: center;
+	font: bold 66px mifuente, verdana, sans-serif;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 3px 3px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #FFAA2A); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #FFAA2A);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #FFAA2A);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #FFAA2A);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+}
 #mesaLibre {
 	display: block;
 	width: 100px;
@@ -25,4 +142,146 @@ body {
 	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
 	-o-transition: -o-transform 1s ease-in-out 0.1s;
 	-ms-transition: -ms-transform 1s ease-in-out 0.1s;	
+}
+
+#accion{
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#accion:hover{
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+
+}
+
+#checkbox{
+	margin-left:1px; /*Este margen hace que no se encime el contenido en tu menúlateral, es     importante que pongas un pocos pixeles más que el ancho  de tu columna lateral*/
+	background-color: #D4FFD4;
+	/*	border:#000000 1px solid; /*ponemos un dorde para que se vea bonito*/
+	float:left; /*Aqui determinas de lado quieres quede esta "columna" */	
+}
+#nombreComida {
+	margin-left:1px; /*Este margen hace que no se encime el contenido en tu menúlateral, es     importante que pongas un pocos pixeles más que el ancho  de tu columna lateral*/
+background-color: #D4FFD4;
+/*border:#000000 1px solid; /*ponemos un dorde para que se vea bonito*/
+float:left;
+}
+#cantidades {
+	margin-left:1px; /*Este margen hace que no se encime el contenido en tu menúlateral, es     importante que pongas un pocos pixeles más que el ancho  de tu columna lateral*/
+background-color: #D4FFD4;
+/*	border:#000000 1px solid; /*ponemos un dorde para que se vea bonito*/
+float:left;
+}
+#checkbox div {
+	display: block;
+	width: 50px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 2px 2px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#nombreComida div {
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 2px 2px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#cantidades div {
+	display: block;
+	width: 155px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 2px 2px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#llevar div {
+	display: block;
+	width: 155px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 2px 2px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+}
+#observacion div {
+	display: block;
+	width: 190px;
+	
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	background: rgb(150,0,0); /*rgb(numeros decimales del 0 al 255)*/
+	border-radius: 20px;
+	box-shadow: rgb(0, 0, 150) 2px 2px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #FFFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021193905) do
+ActiveRecord::Schema.define(version: 20141021204531) do
 
   create_table "drink_menus", force: true do |t|
     t.string   "name"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20141021193905) do
     t.string   "photo"
     t.text     "description"
     t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "quantity"
+    t.string   "state"
+    t.string   "takeaway"
+    t.string   "observation"
+    t.integer  "table_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,4 +68,3 @@ ActiveRecord::Schema.define(version: 20141021193905) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
-

@@ -17,6 +17,15 @@ devise_for :users do
   get "helpers/index"
   get "bartenders/index"
   get "chefs/index"
+  get '/cuentas' => 'managers#cuentas'
+
+  get '/cuentas/user/role_admi/:id' => 'managers#role_admi', :as => 'role_admi'
+  get '/cuentas/user/role_asistente/:id' => 'managers#role_asistente', :as => 'role_asistente'
+  get '/cuentas/user/role_barman/:id' => 'managers#role_barman', :as => 'role_barman'
+  get '/cuentas/user/role_mesero/:id' => 'managers#role_mesero', :as => 'role_mesero'
+  get '/cuentas/user/role_chef/:id' => 'managers#role_chef', :as => 'role_chef'
+
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

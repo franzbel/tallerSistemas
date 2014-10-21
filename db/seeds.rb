@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 main_admin = User.create(:email => 'admin@gmail.com', :password => '12345678', 
-       :password_confirmation => '12345678', :name => 'admin')
+       :password_confirmation => '12345678', :name => 'admin', :role => 'admin')
 main_admin = User.create(:email => 'asistente@gmail.com', :password => '12345678', 
-       :password_confirmation => '12345678', :name => 'asistente')
+       :password_confirmation => '12345678', :name => 'asistente', :role => 'asistente')
 main_admin = User.create(:email => 'barman@gmail.com', :password => '12345678', 
-       :password_confirmation => '12345678', :name => 'barman')
+       :password_confirmation => '12345678', :name => 'barman', :role => 'barman')
 main_admin = User.create(:email => 'mesero@gmail.com', :password => '12345678', 
-       :password_confirmation => '12345678', :name => 'mesero')
+       :password_confirmation => '12345678', :name => 'mesero', :role => 'mesero')
 main_admin = User.create(:email => 'chef@gmail.com', :password => '12345678', 
-       :password_confirmation => '12345678', :name => 'chef')
+       :password_confirmation => '12345678', :name => 'chef', :role => 'chef')

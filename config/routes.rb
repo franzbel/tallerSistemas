@@ -1,5 +1,12 @@
 Fogondemaria::Application.routes.draw do
 
+
+
+  resources :recipes do
+    resources :ingredients
+  end
+
+
   resources :drink_menus
 
   resources :food_menus
@@ -23,6 +30,10 @@ devise_for :users do
   get "waiters/index"
   get "helpers/index"
   get "bartenders/index"
+
+get '/recetas' => 'recipes#index'
+
+
   get "chefs/index"
   get '/cuentas' => 'managers#cuentas'
   get '/mesas' => 'helpers#mesas'

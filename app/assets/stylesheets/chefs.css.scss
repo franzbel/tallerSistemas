@@ -1,3 +1,94 @@
 // Place all the styles related to the chefs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#foto img {
+max-width: 240px; 
+height: auto;
+float: left;
+}
+#listo{
+	display: block;
+	width: 120px;
+
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(255,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(25, 42, 42) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #FF0000); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #FF0000);
+	background: -ms-radial-gradient(center, circle, #0FFFFF, #FF0000);
+	background: -o-radial-gradient(center, circle, #0FFFFF, #FF0000);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+	float: left;
+}
+
+#titulo{
+	display: block;
+	width: 120px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(255,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(25, 42, 42) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #0FFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #0FFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+	float: left;
+}
+#llamar{
+	display: block;
+	width: 120px;
+	
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(150,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(25, 42, 42) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #00FF00); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #00FF00);
+	background: -ms-radial-gradient(center, circle, #0FFFFF, #00FF00);
+	background: -o-radial-gradient(center, circle, #0FFFFF, #00FF00);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+	float: left;
+}
+#tituloComida{
+	display: block;
+	width: 236px;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #999999;
+	border-radius: 20px 20px 30px 30px;
+	background: rgb(145,42,42); /*rgb(numeros decimales del 0 al 255)*/
+	/*box-shadow: rgb(25, 42, 42) 10px 10px 5px;/* Color de la sombra/ distancia horizontal/distancia vertical/ radio de difuminacion*/
+	background: -moz-radial-gradient(center, circle, #FFFFFF, #006699); /*Posicion de comienzo//forma/color inicial/ color final*/
+	background: -webkit-radial-gradient(center, circle, #FFFFFF, #006699);
+	background: -ms-radial-gradient(center, circle, #0FFFFF, #006699);
+	background: -o-radial-gradient(center, circle, #0FFFFF, #006699);
+	-moz-transition: -moz-transform 1s ease-in-out 0.1s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.1s;
+	-o-transition: -o-transform 1s ease-in-out 0.1s;
+	-ms-transition: -ms-transform 1s ease-in-out 0.1s;
+	float: left;
+}
+#cuerpo {
+	float: left;
+}

@@ -29,20 +29,20 @@
         
         <div id="nombreComida">
           <div>
-             Para llevar 
+             Nota 
           </div>
         </div>
         
-        <div id="observacion  ">
+        <div id="observacion">
           <div>
             <%= text_area_tag 'observacion[]'%>            
           </div>
         </div>  
-        
+          
        
         <%= hidden_field_tag 'mesa_ids[]', @mesa.id %> 
 
-      <br><br><br><br>    
+      <br>    <br>
     <% end %>
      
     <%= submit_tag 'Pedir comida'%>

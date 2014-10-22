@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :state, 'Estado (*)' %><br>
     <%= f.select :state, ['Libre', 'Ocupada', 'Limpieza', 'Reservada']%>
+=======
+    <%= f.label :state, 'Estado *' %><br>
+    <%= f.select :state, ['libre', 'ocupada', 'limpieza', 'reservada']%>
+>>>>>>> c5e2f706170a4f9954c3bafcb81244582ab45c5d
   </div>
   <div class="actions">
     <%= f.submit "Crear Mesa", :class => "btn btn-success" %>

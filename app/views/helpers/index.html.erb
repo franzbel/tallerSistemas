@@ -1,3 +1,7 @@
-<h1>Asistente</h1>
+<div id="midiv">
+	<% @mesas.each do |mesa|%>
 
-<a href="/mesas">Ver Lista de Mesas</a>
+		<%= image_tag("#{mesa.id}.png") %>
+		<%= link_to 'Listo', clean_tables_path(mesa) %><br>
+	<% end %>
+</div>

@@ -52,7 +52,7 @@ class WaitersController < ApplicationController
 	      	@order.observation=arreglo_observaciones[cont]
 	  		@order.save
 	  		cont =cont + 1
-	  		#@order.food_menus_orders<<@comida
+	  		@order.drink_menus<<@comida
 	  	end
 	  	redirect_to waiters_index_path
 	end
@@ -96,7 +96,7 @@ class WaitersController < ApplicationController
 	      	@order.observation=arreglo_observaciones[cont]
 	  		@order.save
 	  		cont =cont + 1
-	  		#@order.food_menus_orders<<@comida
+	  		@order.food_menus<<@comida
 	  	end
 	  	redirect_to waiters_index_path
 	end

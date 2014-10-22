@@ -1,0 +1,33 @@
+<%= form_tag ({controller: "waiters", action: "create_order_drink"}) do %>
+    <% @comidas.each do |comida| %>
+      <div id="checkbox">
+        <div>
+            <%= check_box_tag 'comida_ids[]', comida.id %>
+        </div>
+      </div>
+
+      <div id="nombreComida">
+        <div>
+          <%= comida.name %>
+        </div>
+      </div>
+      
+      <div id="cantidades">
+        <div>
+        <%= number_field_tag 'cantidades[]', 0%>
+        </div>
+      </div>
+      
+        
+
+      <%= hidden_field_tag 'llevar[]' %> 
+      <%= hidden_field_tag 'observacion[]' %> 
+      <%= hidden_field_tag 'mesa_ids[]', @mesa.id %> 
+	 <!-- <select id="llevar" name="llevar[]">
+	      <option value="si">si</option>    
+	      <option value="no">no</option>  
+      </select>  <br>-->
+       <br><br><br><br>  
+      <% end %>
+    <%= submit_tag 'Pedir bebida'%>
+<% end %>

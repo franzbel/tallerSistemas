@@ -1,2 +1,33 @@
-<h1>Chefs#index</h1>
-<p>Find me in app/views/chefs/index.html.erb</p>
+<table id="mitabla">
+  <thead>
+      <tr >
+        <th id="titulo">Presentacion</th>
+        <th id="titulo">Nombre</th>
+        <th id="titulo">Cantidad</th>
+        <th id="titulo">Para llevar</th>
+        <th id="titulo">Mesa</th>
+        <th id="titulo">Observacion</th>
+        <th id="titulo"> Llamar</th>
+        
+      </tr>  
+  </thead>
+
+  <tbody id="cuerpo">
+    <% @pedidos.each do |pedido| %>
+      <tr>
+        <% comidas = pedido.food_menus %>
+        <% comidas.each do |comida| %>
+          
+            <td id="foto"><%= image_tag ("#{comida.photo}")%></td>
+            <td id="listo"><%= comida.name%></td>  
+            <td id="listo"><%= pedido.quantity %></td>
+            <td id="listo"><%= pedido.takeaway %></td>
+            <td id="listo"><%= pedido.table_id %></td>
+            <td id="listo"><%= pedido.observation %></td>
+            <td id="llamar"><%= link_to 'listo', delivery_path(pedido) %></td>
+          
+        <%end%>     
+      </tr>
+    <% end %>
+  </tbody>
+</table>

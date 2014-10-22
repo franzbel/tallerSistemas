@@ -33,8 +33,14 @@ devise_for :users do
 
 
   get "helpers/index"
+  get "helpers/clean_table/:id" => "helpers#clean_table", :as => 'clean_tables'
+
   get "bartenders/index"
+  get "bartenders/delivery/:id" => "bartenders#delivery", :as =>'drink_delivery'
+  
   get "chefs/index"
+  get "chefs/delivery/:id" => "chefs#delivery", :as =>'delivery'
+
   get '/cuentas' => 'managers#cuentas'
   get '/mesas' => 'helpers#mesas'
 

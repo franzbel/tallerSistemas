@@ -1,2 +1,28 @@
-<h1>Bartenders#index</h1>
-<p>Find me in app/views/bartenders/index.html.erb</p>
+<table id="mitabla">
+  <thead>
+    <tr>
+      <th >Presentacion</th>  
+      <th id="nombrep">Nombre</th>  
+      <th id="cantidadp">Cantidad</th>
+      <th id="llamarp">Llamar</th>
+      
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedidos.each do |pedido| %>
+      
+        <% comida=pedido.drink_menus %>
+        <% comida.each do |comida| %>
+            <tr>    
+            <th id="foto"><%= image_tag ("#{comida.photo}")%></th>  
+	          <th id="nombre"><%= comida.name%></th>  
+	          <th id="cantidad"><%= pedido.quantity %></th>
+	          <th id="llamar"><%= link_to 'listo', drink_delivery_path(pedido) %></th>
+            </tr>
+        <% end%>     
+       
+    <% end %>
+  </tbody>
+</table>

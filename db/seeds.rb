@@ -23,13 +23,15 @@ main_admin = User.create(:email => 'chef@gmail.com', :password => '12345678',
 
 comidas = FoodMenu.create([{ name: 'Pique Macho', photo: 'pique.jpg', 
 		description: 'Carne de res, salchicha, papas, huevo, rodajas de pimiento y tomate', price: 50},
-	{name: 'Charque', photo: 'charque.jpg',
-		description: 'Carne de res deshidratada, papas, maiz, huevo, queso', price: 35},
+	{name: 'Picante', photo: 'picante.jpg',
+		description: 'Carne de pollo y lengua de res, papas, arroz y chunio', price: 35},
 	{name: 'Lapping', photo: 'lapping.jpg',
+		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40},
+	{name: 'Chajchu', photo: 'chajchu.jpg',
 		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40}])
 
 # MENU BEBIDAS
 
-bebidas = DrinkMenu.create([{name: 'Mojito', photo: 'mojito.jpg', description: 'ron, limon, menta, hierbabuena', price: 20},
-	{name: 'Margarita', photo: 'margarita.jpg', description: 'tequila, limon, licor de naranja', price: 20},
-	{name: 'Whisky', photo: 'whisky.jpg', description: 'Whisky', price: 30}])
+bebidas = DrinkMenu.create([{name: 'Mojito', photo: 'mojito.png', description: 'ron, limon, menta, hierbabuena', price: 20},
+	{name: 'Margarita', photo: 'margarita.png', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'Whisky', photo: 'whisky.png', description: 'Whisky', price: 30}])

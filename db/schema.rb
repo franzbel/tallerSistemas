@@ -37,11 +37,12 @@ ActiveRecord::Schema.define(version: 20141022065916) do
   end
 
   create_table "food_menus_orders", id: false, force: true do |t|
-      t.integer "food_menus_id"
+    t.integer "food_menus_id"
     t.integer "orders_id"
     t.integer "food_menu_id"
     t.integer "order_id"
   end
+
   create_table "ingredients", force: true do |t|
     t.string   "ingrediente"
     t.integer  "recipe_id"
@@ -67,7 +68,6 @@ ActiveRecord::Schema.define(version: 20141022065916) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "tables", force: true do |t|
     t.string   "state"

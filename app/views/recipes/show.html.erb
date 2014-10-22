@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Preparation:</strong>
+  <%= @recipe.preparation %>
+</p>
+
+
+
+<% @recipe.ingredients.reverse.each do |comment| %>
+	<div clas="field">
+		<br>
+		<%= comment.ingrediente %>
+		<%= "---------" %>
+		<%= comment.created_at %><br>
+	</div>	
+
+
+<% end %>
+
+<br>
+<%= form_for([@recipe,@recipe.ingredients.build]) do |f| %>
+
+  <div class="field">
+    <%= f.label "ingredient" %>
+    <%= f.text_area :ingrediente %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

@@ -27,7 +27,18 @@ devise_for :users do
   get '/users/edit_user/:id' => 'managers#edit_user'
  
   root "welcome#index"
+
+
+
   get "waiters/index"
+  get "waiters/take_order/:id" => "waiters#take_order", :as => 'take_order'
+  get "waiters/take_drink_order/:id" => "waiters#take_drink_order", :as => 'take_drink_order'
+  get "waiters/set_table/:id" => "waiters#set_table", :as => 'set_table'
+  get "waiters/serving_food/:id" => "waiters#serving_food", :as => 'serving_food'
+  post "waiters/create_order"
+  post "waiters/create_order_drink"
+
+
   get "helpers/index"
   get "bartenders/index"
 

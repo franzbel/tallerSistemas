@@ -26,6 +26,7 @@ devise_for :users do
  
   root "welcome#index"
 
+get '/recipes/destroy/:id' => 'recipes#destroy'  
 
 
   get "waiters/index"

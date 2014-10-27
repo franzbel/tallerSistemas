@@ -11,30 +11,24 @@
 </p>
 
 
+<div>
+<strong>Ingredientes:</strong>
 
-<% @recipe.ingredients.reverse.each do |comment| %>
+
+
+
+<% @recipe.ingredients.each do |comment| %>
 	<div clas="field">
-		<br>
+  
+    <br>
 		<%= comment.ingrediente %>
-		<%= "---------" %>
-		<%= comment.created_at %><br>
+
 	</div>	
 
 
 <% end %>
-
+</div>
 <br>
-<%= form_for([@recipe,@recipe.ingredients.build]) do |f| %>
-
-  <div class="field">
-    <%= f.label "ingredient" %>
-    <%= f.text_area :ingrediente %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
 
 
 

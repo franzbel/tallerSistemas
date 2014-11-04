@@ -4,6 +4,13 @@ class ManagersController < ApplicationController
 
   def index
   end
+
+def asignar
+  @user=User.find(params[:id])
+
+#  redirect_to '/asignar'
+end
+
   def cuentas
     @users = User.all
         if current_user.role == 'admin'

@@ -48,6 +48,8 @@
               <td></td>
               <td><%= user.role%></td>
               
+<td><h5><a href= "/asignar/<%=user.id%>"class="btn btn-info"><b>Asignar Rol</b></h5></a></td>  
+
               <td><h5><a href= "<%=role_asistente_path(user.id) %>"class="btn btn-info"><b>Asistente</b></h5></a></td>  
               <td><h5><a href= "<%=role_barman_path(user.id) %>"class="btn btn-success"><b>Barman</b></h5></a></td>  
               <td><h5><a href= "<%=role_mesero_path(user.id) %>"class="btn btn-default"><b>Mesero</b></h5></a></td> 

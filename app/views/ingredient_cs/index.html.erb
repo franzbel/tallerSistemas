@@ -1,0 +1,29 @@
+<h1>Listing ingredient_cs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Recipec</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredient_cs.each do |ingredient_c| %>
+      <tr>
+        <td><%= ingredient_c.name %></td>
+        <td><%= ingredient_c.recipec %></td>
+        <td><%= link_to 'Show', ingredient_c %></td>
+        <td><%= link_to 'Edit', edit_ingredient_c_path(ingredient_c) %></td>
+        <td><%= link_to 'Destroy', ingredient_c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingredient c', new_ingredient_c_path %>

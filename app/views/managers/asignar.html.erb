@@ -1,0 +1,47 @@
+<h1>Asignar Rol</h1>
+
+<center>
+
+
+
+<div class="panel panel-success">
+
+      <table class="table table-striped"><thead>
+          <tr class="info">
+       
+          <td><b>Email</b></td>
+          <th></th>
+          <td><b>Rol</b></td>
+          <td></td>
+          <td></td>
+          <td><b align ="center">Asignar Rol</b></td>
+          <td></td>
+          <td></td>
+          <td></td>	
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+
+          <tr>
+              <td><%= @user.email %></td> 
+              <td></td>
+              <td><%= @user.role%></td>
+              
+              <td><h5><a href= "<%=role_asistente_path(@user.id) %>"class="btn btn-info"><b>Asistente</b></h5></a></td>  
+              <td><h5><a href= "<%=role_barman_path(@user.id) %>"class="btn btn-success"><b>Barman</b></h5></a></td>  
+              <td><h5><a href= "<%=role_mesero_path(@user1.id) %>"class="btn btn-default"><b>Mesero</b></h5></a></td> 
+              <td><h5><a href= "<%=role_chef_path(@user1.id) %>"class="btn btn-primary"><b>Chef</b></h5></a></td>  
+            
+            </tr>
+        </tbody>
+      </table>
+
+</div>
+
+
+</center>

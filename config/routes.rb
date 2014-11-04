@@ -1,5 +1,9 @@
 Fogondemaria::Application.routes.draw do
 
+  resources :ingredient_cs
+
+  resources :recipe_cs
+
   resources :recipes do
     resources :ingredients
   end
@@ -37,6 +41,7 @@ get '/recipes/destroy/:id' => 'recipes#destroy'
   post "waiters/create_order"
   post "waiters/create_order_drink"
 
+ post "recipe_cs/create_recipec"
 
   get "helpers/index"
   get "helpers/clean_table/:id" => "helpers#clean_table", :as => 'clean_tables'
@@ -63,6 +68,9 @@ get '/recetas' => 'recipes#index'
   get '/cuentas/user/role_mesero/:id' => 'managers#role_mesero', :as => 'role_mesero'
   get '/cuentas/user/role_chef/:id' => 'managers#role_chef', :as => 'role_chef'
 
+get '/cuentas/user/asignar/:id' => 'managers#asignar', :as => 'asignar'
+
+  get '/asignar/:id' => 'managers#asignar'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

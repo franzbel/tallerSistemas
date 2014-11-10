@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <h4><span class="label label-danger">Nombre:</span></h4>
   <%= @ingredient_c.name %>
 </p>
-
-<p>
-  <strong>Recipec:</strong>
-  <%= @ingredient_c.recipec %>
-</p>
-
-<%= link_to 'Edit', edit_ingredient_c_path(@ingredient_c) %> |
-<%= link_to 'Back', ingredient_cs_path %>
+<br>
+<%= link_to 'Volver', ingredient_cs_path, :class=> 'btn btn-default active' %>

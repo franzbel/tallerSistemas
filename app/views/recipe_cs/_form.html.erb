@@ -1,4 +1,5 @@
-<%= form_for(@recipe_c) do |f| %>
+
+<%= nested_form_for @recipe_c do |f| %>
   <% if @recipe_c.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe_c.errors.count, "error") %> prohibited this recipe_c from being saved:</h2>
@@ -12,45 +13,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+   <h4><span class="label label-danger" <%= f.label :name, value='Nombre:'%></span></h4> 
     <%= f.text_field :name %>
   </div>
+
+<h4><span class="label label-danger">Ingredientes: </span></h4>
+ 
+<%= f.fields_for :recipe_ingredients %>
+<br>
+        <%= f.link_to_add "Agregar Ingrediente", :recipe_ingredients, :class=> 'btn btn-default active' %>|
+
+
+<%= link_to 'Nuevo Ingrediente', new_ingredient_c_path(@recipe_c.id), :class=> 'btn btn-default ' %> 
   <div class="field">
-    <%= f.label :list %><br>
-    <%= f.text_area :list %>
-  </div>
-  <div class="field">
-    <%= f.label :preparation %><br>
+     <h4><span class="label label-danger" <%= f.label :preparation, value='Preparacion:'%></span></h4>
     <%= f.text_area :preparation %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Aceptar"%>
   </div>
 <% end %>
 
 
 
 
-<%= form_tag ({controller: "recipe_cs", action: "create_recipec"}) do %>
-    <% @ingredient_cs.each do |ingredient| %>
-      <div id="checkbox">
-        <div>
-            <%= check_box_tag 'ingredientc_ids[]', ingredient.id %>
-        </div>
-      </div>
-
-      <div id="nombreIngredient">
-        <div>
-          <%= ingredient.name %>
-        </div>
-      </div>
-       
-       <br><br><br><br>  
-      <% end %>
-    <%= submit_tag 'Aceptar'%>
-<% end %>
-
-
-
-
-<%= link_to 'Agregar Ingrediente', new_ingredient_c_path %>

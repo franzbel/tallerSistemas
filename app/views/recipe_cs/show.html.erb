@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<div class="hero-unit">
 <p>
-  <strong>Name:</strong>
+  <h4><span class="label label-danger">Nombre:</span></h4>
   <%= @recipe_c.name %>
 </p>
 
-<p>
-  <strong>List:</strong>
-  <%= @recipe_c.list %>
-</p>
+
 
 <p>
-  <strong>Preparation:</strong>
+   <h4><span class="label label-danger">Ingredientes:</span></h4>
+</p>
+<% @recipe_c.recipe_ingredients.each do |m| %>
+<%= m.ingredient_c.name %>
+<br>
+<% end %>
+
+
+<p>
+   <h4><span class="label label-danger">Preparacion:</span></h4>
   <%= @recipe_c.preparation %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_c_path(@recipe_c) %> |
-<%= link_to 'Back', recipe_cs_path %>
+<br>
+</div>
+
+<%= link_to 'Volver', recipe_cs_path, :class=> 'btn btn-default active' %>

@@ -1,29 +1,39 @@
-<h1>Listing ingredient_cs</h1>
+<center><h1><b> Lista De Ingredientes </b></h1></center> 
+<br>
+<div class="panel panel-success">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Recipec</th>
-      <th></th>
-      <th></th>
+      <table class="table table-striped"><thead>
+          <tr class="danger">
+
+
+      <th></th>      
+      <th>Nombre</th>
+      <th></th>  
+      <th></th>    
+      <th><b align ="center">Opciones</b></th>
+
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @ingredient_cs.each do |ingredient_c| %>
+
+     <% @ingredient_cs.each do |ingredient_c| %>
       <tr>
+        <td></td>
         <td><%= ingredient_c.name %></td>
-        <td><%= ingredient_c.recipec %></td>
-        <td><%= link_to 'Show', ingredient_c %></td>
-        <td><%= link_to 'Edit', edit_ingredient_c_path(ingredient_c) %></td>
-        <td><%= link_to 'Destroy', ingredient_c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td></td>
+        <td><%= link_to 'Edit', edit_ingredient_c_path(ingredient_c) , :class =>"btn btn-danger"%></td>
+        <td></td>
+        <td><%= link_to 'Eliminar', ingredient_c, :class =>"btn btn-danger", method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
-    <% end %>
+    <% end %> 
+
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Ingredient c', new_ingredient_c_path %>
+
+<%= link_to 'Registrar Ingrediente', new_ingredient_c_path, :class=> 'btn btn-default active' %> |
+<%= link_to 'Lista de Recetas', recipe_cs_path, :class=> 'btn btn-default active' %> 

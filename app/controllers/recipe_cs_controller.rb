@@ -10,14 +10,17 @@ class RecipeCsController < ApplicationController
 
 
 def create_recipec
-
+      arreglo=[]
       params[:ingredientc_ids].each do |f|
         
         @ingredient=IngredientC.where(:id => f)
-
         @recipe_c.list<<@ingredient.name
+
+     #   arreglo<<@ingredient.name
       end
       redirect_to new_recipe_c_path
+#render text: arreglo
+#      render text: params[:ingredientc_ids]
   end
 
 
@@ -36,6 +39,7 @@ def create_recipec
 
   # GET /recipe_cs/1/edit
   def edit
+    @ingredient_cs = IngredientC.all
   end
 
   # POST /recipe_cs
@@ -45,7 +49,7 @@ def create_recipec
 
     respond_to do |format|
       if @recipe_c.save
-        format.html { redirect_to @recipe_c, notice: 'Recipe c was successfully created.' }
+        format.html { redirect_to @recipe_c, notice: 'Receta creada con exito.' }
         format.json { render action: 'show', status: :created, location: @recipe_c }
       else
         format.html { render action: 'new' }
@@ -59,7 +63,7 @@ def create_recipec
   def update
     respond_to do |format|
       if @recipe_c.update(recipe_c_params)
-        format.html { redirect_to @recipe_c, notice: 'Recipe c was successfully updated.' }
+        format.html { redirect_to @recipe_c, notice: 'Receta actualizada.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -86,6 +90,6 @@ def create_recipec
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_c_params
-      params.require(:recipe_c).permit(:name, :list, :preparation)
+      params.require(:recipe_c).permit(:name, :preparation, recipe_ingredients_attributes: [:id, :ingredient_c_id, :repice_c_id, :_destroy])
     end
 end

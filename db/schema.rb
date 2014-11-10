@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103161609) do
+ActiveRecord::Schema.define(version: 20141109231942) do
 
   create_table "drink_menus", force: true do |t|
     t.string   "name"
@@ -73,11 +73,20 @@ ActiveRecord::Schema.define(version: 20141103161609) do
 
   create_table "recipe_cs", force: true do |t|
     t.string   "name"
-    t.text     "list"
     t.text     "preparation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "recipe_ingredients", force: true do |t|
+    t.integer  "recipe_c_id"
+    t.integer  "ingredient_c_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipe_ingredients", ["ingredient_c_id"], name: "index_recipe_ingredients_on_ingredient_c_id"
+  add_index "recipe_ingredients", ["recipe_c_id"], name: "index_recipe_ingredients_on_recipe_c_id"
 
   create_table "recipes", force: true do |t|
     t.string   "name"

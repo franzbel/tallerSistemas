@@ -1,0 +1,4 @@
+<%= f.fields_for :ingredient_cs do |task_form| %>
+  <%= task_form.text_field :name %>
+  <%= task_form.link_to_remove "Eliminar ingrediente" %>
+<% end %>

@@ -24,7 +24,7 @@
         <%= f.link_to_add "Agregar Ingrediente", :recipe_ingredients, :class=> 'btn btn-default active' %>|
 
 
-<%= link_to 'Nuevo Ingrediente', new_ingredient_c_path(@recipe_c.id), :class=> 'btn btn-default ' %> 
+<%= link_to 'Nuevo Ingrediente', new_ingredient_c_path, :class=> 'btn btn-default ' %> 
   <div class="field">
      <h4><span class="label label-danger" <%= f.label :preparation, value='Preparacion:'%></span></h4>
     <%= f.text_area :preparation %>

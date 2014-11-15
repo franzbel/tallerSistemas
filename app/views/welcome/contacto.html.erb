@@ -1,0 +1,152 @@
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          	 <%= image_tag("marca.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li><a href="/">inicio</a></li>
+               <li><a href="/mostrar_menu">menu</a></li>
+               <li><a href="index-2.html">reservation</a></li>
+               <li><a href="index-3.html">blog</a></li>
+               <li class="current"><a href="/contacto">contacto</a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>        
+
+<!--=====================
+          Content
+======================-->
+<section class="content ctn__1"><div class="ic"></div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h2>Encuentranos en</h2>
+        <div class="map">
+          <div class="row">
+            <div class="grid_9">
+              <figure class="">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3807.3574011384912!2d-66.28563228197612!3d-17.39462764197934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1416080402279" width="600" height="450" frameborder="0" style="border:0"></iframe>
+              </figure>
+            </div>
+            <div class="grid_3">
+              <div class="map_block">
+                <div class="map_title">Direccion:</div>
+                Av. General Pando, <br> Entre E. Cespedes y Beni
+              </div>
+              <div class="map_block">
+                <div class="map_title">Telefomos:</div>
+                +1 800 559 6580 <br>+1 800 603 6035
+              </div>
+              <div class="map_block">
+                <div class="map_title">Email:</div>
+                <a href="#">fogondemaria@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_8">
+        <p>Nuestro soporte es para <span class="color1 fw"><a href="http://www.templatemonster.com/" rel="nofollow">temas relacionados con nuestro restaurant</a></span>. <br>
+          Los empleados de <span class="color1 fw"><a href="/" rel="nofollow">El Fogon De Maria</a></span> estan siempre dispuestos a ayudarle.</p>
+        Kas facilisis, nulla vel viverra auctor, leo magna sodales felis, quis malesuada nibh odio ut velitoin pharetra luctus diama scelerisque eros convallis accumsan. 
+      </div>
+    </div>
+  </div>
+</section>
+<div class="form_block">
+  <div class="container">
+    <div class="row">
+      <div class="grid_11">
+        <h2>Formulario de contacto:</h2>
+        <form id="form" >
+        <div class="form_spinner">
+        <img src="assets/Preloader_4.gif" alt="">
+        </div>
+        <div class="modal fade response-message">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+        asfasfasf
+        </div>      
+        </div>
+        </div>
+        </div>
+        <div class="response-error-message"></div>
+        <label class="name">
+        <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters" />
+        <span class="empty-message">*This field is required.</span>
+        <span class="error-message">*This is not a valid name.</span>
+        </label>         
+        <label class="email">
+        <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
+        <span class="empty-message">*This field is required.</span>
+        <span class="error-message">*This is not a valid email.</span>
+        </label>
+        <label class="phone">
+        <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@Required @JustNumbers"/>
+        <span class="empty-message">*This field is required.</span>
+        <span class="error-message">*This is not a valid phone.</span>
+        </label>
+        <label class="message">
+        <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+        <span class="empty-message">*This field is required.</span>
+        <span class="error-message">*The message is too short.</span>
+        </label>
+        <div class="clear"></div>
+        <div class="btns">
+        <a href="#" data-type="reset" class="btn">clear</a>
+        <a href="#" data-type="submit" class="btn">send</a>
+        </div>
+        </form>   
+      </div>
+    </div>
+  </div>
+</div>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">  
+        <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+          <a href="#" class="fa fa-pinterest"></a>
+        </div>
+        <div class="copyright"><span class="brand">Taller de sistemas </span> &copy; <span id="copyright-year"></span> | <a href="#">Politica de privacidad</a> <div>Contactenos en <a href="https://www.facebook.com/erika.vargas.35728" target="_blank" class="brand">Ericka vargas</a>. | <a href="https://www.facebook.com/franz.beltran.mercado" title="Themes for Joomla" class="brand">Franz Beltran</a></div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</footer> 

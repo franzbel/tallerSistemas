@@ -361,7 +361,7 @@ header h1 a img {
     padding: 6px 0 18px;
     width: 194px;
     margin: 0 auto 2px;
-    background: url(/assets/bann_sep.png) 0 bottom repeat-x;
+    background: url('/assets/bann_sep.png') 0 bottom repeat-x;
 }
 
 .bann_capt  a {
@@ -707,7 +707,7 @@ header h1 a img {
 #footer {
     display: block;
     padding: 50px 0 40px;
-    color: #e2e2e2;
+    color: #000000;
     font-size: 14px;
     line-height: 18px;
 }

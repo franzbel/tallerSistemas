@@ -34,6 +34,15 @@ get '/recipes/destroy/:id' => 'recipes#destroy'
 
 
   get "waiters/index"
+  
+  get "waiters/opciones/:id" => 'waiters#opciones', as: :opciones  
+  get "waiters/ocupar_mesa/:id" => 'waiters#ocupar_mesa', as: :ocupar_mesa 
+  get "waiters/pedido_mesa/:id" => 'waiters#pedido_mesa', as: :pedido_mesa  
+  get "waiters/edit/:id" => 'waiters#edit', as: :edit
+  post "waiters/update/:id" => 'waiters#update', as: :update
+  get "waiters/cancelar/:id" => 'waiters#cancelar', as: :cancelar  
+
+
   get "waiters/take_order/:id" => "waiters#take_order", :as => 'take_order'
   get "waiters/take_drink_order/:id" => "waiters#take_drink_order", :as => 'take_drink_order'
   get "waiters/set_table/:id" => "waiters#set_table", :as => 'set_table'

@@ -1,53 +1,65 @@
-<table id="mitabla">
-  <thead>
-    <tr >
-      <th></th>
-      <th></th>
-      <th></th>
-      
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tables.each do |table| %>
-      <tr>
-        <td >
-          <%  pedidos = table.orders %>
-          <% if pedidos.any?%>
-              <span id="pedido"></span>
-          <% end %>
-          <% pedidos.each do |pedido|%>
-            <% if pedido.state=="en proceso"%>
-              <span id="pedidoProceso"><%= pedido.state %></span>
-            <% end %>
-            <% if pedido.state=="comida lista" || pedido.state=="bebida lista"%>
-              <span id="pedidoListo"><%= link_to pedido.state, serving_food_path(pedido) %></span>
-            <% end %>
-            
-          <% end %>
-        </td>
-
-        <td>
-          <% if table.state == "ocupada"%>
-            <span id="mesaOcupada"><%= "#{table.id}"%></span>
-          <%end%>
-          <% if table.state == "limpieza"%>
-            <span id="mesaLimpieza"><%= "#{table.id}" %></span>
-          <%end%>
-          <% if table.state == "libre"%>
-            <span id="mesaLibre"><%= "#{table.id}" %></span>
-            
-          <%end%>
-        </td>  
-
-        <td><span id="accion"><%= link_to 'Pedir comida', take_order_path(table) %></span>
-            <span id="accion"><%= link_to 'Pedir bebida', take_drink_order_path(table) %></span>
-            <span id="accion"><%= link_to 'Llamar asistente', set_table_path(table) %></span>
-        </td>
-
-        
-      </tr>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Logotipo</a>
+  </div>
+   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/waiters/index">Listar mesas</a></li>
+      <li><a href="/menus/cocina">Nuestra cocina</a></li>
+      <li><a href="/menus/bar">Nuestro bar</a></li>
+      <li><a href="/waiters/index">Bandeja de entrada <span class="badge">42</span></a></li>
+    </ul>
+  </div>
+</nav>
+<h2>LISTAR MESAS</h2>
+<div id="mesas">
+  <% @tables.each do |mesa| %>
+    <% if mesa.state == "libre" %>
+    <a href="opciones/<%= mesa.id%>">
+      <div class="contenedor" id="libre">
+       <%= image_tag("table.png", :class => "icon") %>
+     <!-- <img class="icon" src="assets/table.png">     -->
+      <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+      </div>
+          
+    </a>
     <% end %>
-  </tbody>
-</table>
-
+    
+    <% if mesa.state == "ocupada"%>      
+      <a href="opciones/<%= mesa.id%>">
+        <div class="contenedor" id="ocupada">
+          <%= image_tag("table.png", :class => "icon") %>
+          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+        </div>
+      </a>  
+    <% end %>
+    
+    <% if mesa.state == "limpieza"%>
+      <a href="opciones/<%= mesa.id%>">
+        <div class="contenedor" id="limpieza">
+          <%= image_tag("table.png", :class => "icon") %>     
+          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+        </div>
+      </a>
+    <% end %>
+    
+    <% if mesa.state == "reservada"%>
+      <a href="opciones/<%= mesa.id%>">
+        <div class="contenedor" id="reservada">
+          <%= image_tag("table.png", :class => "icon") %>     
+          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+      </div>
+      </a>
+    <% end %>
+  <% end %>
+</div>

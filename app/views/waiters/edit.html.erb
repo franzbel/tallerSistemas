@@ -21,58 +21,25 @@
     </ul>
   </div>
 </nav>
-
-
-
 <div id="mesas">
-
-  <%= form_tag ({controller: "waiters", action: "create_order_drink"}) do %>
-    <% @comidas.each do |comida| %>
-    <div class="panel panel-default">
-          <div class="panel-body">
-              <div class="row">
-            <div class="col-xs-3">
-                <label>
-                   <%= check_box_tag 'comida_ids[]', comida.id %> <%= comida.name %>
-                </label>
-            </div>  
-
-
-            <div class="col-xs-3">
-               <label for="cantidades">Cantidad</label>
-               <%= number_field_tag 'cantidades[]', 0, :class =>"form-control", :placeholder => "col-xs-3"%>
-            </div>
-
-           
-             
-            <div>
-                <%= hidden_field_tag 'llevar[]' %> 
-                <%= hidden_field_tag 'observacion[]' %> 
-                <%= hidden_field_tag 'mesa_ids[]', @mesa.id %> 
-            </div>  
-
-        </div>             
+  <% @pedido.each do |p| %>
+    <%= form_tag ({controller: "waiters", action: "update"}) do %>
+      <div class="col-xs-3">
+                 <label for="cantidades">Cantidad</label>
+                 <%= number_field_tag 'cantidades[]', p.quantity , :class =>"form-control", :placeholder => "col-xs-3"%>
           </div>
-      </div>
-        
-        
-    <% end %>
-     
-    <%= submit_tag 'Pedir bebida', :class=>"btn btn-primary"%>
-  <% end %>
-  
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+          <div class="col-xs-3">
+                 <label for="llevar">Para llevar</label>
+                 <%= select_tag 'llevar[]', options_for_select([['si', 'si'], ['no', 'no']], p.takeaway), :class =>"form-control", :placeholder => "col-xs-3" %>
+          </div>
+           <div class="col-xs-3">
+             <label for="observacion">Nota</label>
+              <%= text_area_tag 'observacion[]', p.observation ,   :class =>"form-control", :placeholder => "col-xs-3" %> 
+          </div>
+          
+ 
+    <%= submit_tag 'Guardar cambios', :class=>"btn btn-primary"%> 
+  <%end%>
+<% end %>
 
 

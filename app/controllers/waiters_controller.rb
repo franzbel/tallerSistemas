@@ -2,7 +2,44 @@ class WaitersController < ApplicationController
 	def index
 		@tables = Table.all	
 	end
+	def opciones
+		@mesa=Table.find(params[:id])
+	end
 
+	def pedido_mesa
+		@pedido_mesa=Order.where(:state => 'en proceso').where(:table_id => params[:id])
+		
+	end
+	def edit
+		@pedido=Order.where(:id => params[:id])
+	end
+
+	def cancelar
+		@pedido=Order.find(params[:id])
+		@pedido.delete
+		redirect_to waiters_index_path
+	end
+
+	def update
+		@pedido=Order.find(params[:id])
+		@pedido.quantity = params[:cantidades].first.to_i
+		@pedido.takeaway = params[:llevar].first
+		@pedido.observation = params[:observacion].first
+		@pedido.save
+	  	redirect_to waiters_index_path
+	end
+
+	def table_params
+      params.require(:order).permit(:cantidades)
+    end
+	
+
+	def ocupar_mesa
+		@mesa = Table.find(params[:id])
+	  	@mesa.state = "ocupada"
+	  	@mesa.save
+	  	redirect_to waiters_index_path
+	end
 	def take_order
 	  	@mesa=Table.find(params[:id])
 	  	@comidas = FoodMenu.all

@@ -1,26 +1,3 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- El logotipo y el icono que despliega el menú se agrupan
-       para mostrarlos mejor en los dispositivos móviles -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Desplegar navegación</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">Logotipo</a>
-  </div>
-   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
-       otro elemento que se pueda ocultar al minimizar la barra -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/waiters/index">Nuestras mesas</a></li>
-      <li><a href="/menus/cocina">Nuestra cocina</a></li>
-      <li><a href="/menus/bar">Nuestro bar</a></li>
-      <li><a href="/waiters/index">Bandeja de entrada <span class="badge">42</span></a></li>
-    </ul>
-  </div>
-</nav>
 
 <div id="mesas">
   <%= form_tag ({controller: "waiters", action: "create_order"}) do %>

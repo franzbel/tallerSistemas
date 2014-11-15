@@ -16,5 +16,8 @@ class WelcomeController < ApplicationController
      	 redirect_to '/managers/index'
         end
   end
+  def mostrar_menu
+      
+  end
 
 end

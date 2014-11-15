@@ -29,6 +29,7 @@ devise_for :users do
   get '/users/edit_user/:id' => 'managers#edit_user'
  
   root "welcome#index"
+  get '/mostrar_menu' => "welcome#mostrar_menu"
 
 get '/recipes/destroy/:id' => 'recipes#destroy'  
 

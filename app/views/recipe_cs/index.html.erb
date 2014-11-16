@@ -1,5 +1,11 @@
   <center><h1><b> Lista De Recetas </b></h1></center> 
 <br>
+<DIV ALIGN=right>
+
+<%= link_to 'Crear Receta', new_recipe_c_path, :class=> 'btn btn-default active' %> 
+</DIV>
+<br>
+
 <div class="panel panel-success">
 
       <table class="table table-striped"><thead>
@@ -28,7 +34,11 @@
   </tbody>
 </table>
 </div>
+
+
+
+<br>
+<a href= '/distributor_chef' class="btn btn-default active"><h5><b> Volver </b></h5></a>
 <br>
 
 
-<%= link_to 'Crear Receta', new_recipe_c_path, :class=> 'btn btn-default active' %> 

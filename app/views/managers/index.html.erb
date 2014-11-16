@@ -3,12 +3,10 @@
 <br>
 <center>
    <div class="btn-group-vertical  btn-group-lg">
-   <a href= "/cuentas" class="btn btn-danger"><h4><b>  Cuenta </b></h4></a>  		
+   <a href= "/cuentas" class="btn btn-danger"><h4><b> Gestionar Cuentas </b></h4></a>  		
   <br>
+  <%= link_to ' Gestionar  Mesas', tables_path, :class =>"btn btn-danger" %>
   <br>
-  <%= link_to '   Mesa   ', tables_path, :class =>"btn btn-danger" %>
-  <br>
-  <br>
-  <%= link_to 'Menu', food_menus_path, :class =>"btn btn-danger" %>
+  <%= link_to 'Gestionar Menu', food_menus_path, :class =>"btn btn-danger" %>
 </div>
 </center>

@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
      	 redirect_to '/waiters/index'
         end
         if user_signed_in? && current_user.role == 'barman'
-     	 redirect_to '/bartenders/index'
+     	 redirect_to '/distributor_barman'
         end
         if user_signed_in? && current_user.role == 'asistente'
      	 redirect_to '/helpers/index'

@@ -32,6 +32,7 @@ devise_for :users do
  
   root "welcome#index"
   get '/mostrar_menu' => "welcome#mostrar_menu"
+  get '/contacto' => "welcome#contacto"
 
 get '/recipes/destroy/:id' => 'recipes#destroy'  
 

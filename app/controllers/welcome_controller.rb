@@ -17,6 +17,8 @@ class WelcomeController < ApplicationController
         end
   end
   def mostrar_menu
+  end
+  def contacto
       
   end
 

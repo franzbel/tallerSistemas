@@ -2500,6 +2500,7 @@ fieldset[disabled] .checkbox label {
 }
 select.input-sm {
   height: 30px;
+  width: 300px;
   line-height: 30px;
 }
 textarea.input-sm,

@@ -20,14 +20,17 @@ devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-
+get '/distributor_chef' => 'distributor_chefs#distributor_chef'
   post '/user/save' => 'managers#save'
   get '/users/create_user' => 'managers#create_user'
   post '/user' => 'users#create'
 
   get '/users/show_user/:id' => 'managers#show_user'
   get '/users/edit_user/:id' => 'managers#edit_user'
-     get '/users/destroy/:id' => 'managers#destroy'
+get '/user/actualizar/:id' => 'managers#actualizar'
+
+
+     delete '/users/destroy/:id' => 'managers#destroy', :as => 'destroy'
 
  
   root "welcome#index"

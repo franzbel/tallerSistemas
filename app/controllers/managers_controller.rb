@@ -98,6 +98,17 @@ def role_chef
       redirect_to '/cuentas'
   end
 
+
+ def actualizar
+      @user=User.find(params[:id])
+      @user.email=params[:email]
+      @user.password=params[:password]
+      @user.role=params[:role]
+      @user.name = params[:name]
+      @user.save
+      redirect_to '/cuentas'
+  end
+
   def edit_user
     @user=User.find(params[:id])
   end

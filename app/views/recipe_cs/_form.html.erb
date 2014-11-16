@@ -21,17 +21,16 @@
  
 <%= f.fields_for :recipe_ingredients %>
 <br>
-        <%= f.link_to_add "Agregar Ingrediente", :recipe_ingredients, :class=> 'btn btn-default active' %>|
-
-
-<%= link_to 'Nuevo Ingrediente', new_ingredient_c_path, :class=> 'btn btn-default ' %> 
+        <%= f.link_to_add "Agregar Ingrediente", :recipe_ingredients, :class=> 'btn btn-default active' %>
+        <br>
+        <br>
   <div class="field">
      <h4><span class="label label-danger" <%= f.label :preparation, value='Preparacion:'%></span></h4>
     <%= f.text_area :preparation %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Aceptar"%>
+    <%= f.submit "Aceptar", :class=> 'btn btn-default active'%>
   </div>
 <% end %>
 

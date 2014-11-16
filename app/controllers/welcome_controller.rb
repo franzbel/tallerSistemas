@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
   		if user_signed_in? && current_user.role == 'chef'
-     	 redirect_to '/chefs/index'
+     	 redirect_to '/distributor_chef'
         end
         if user_signed_in? && current_user.role == 'mesero'
      	 redirect_to '/waiters/index'

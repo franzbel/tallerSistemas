@@ -11,6 +11,13 @@ def asignar
 #  redirect_to '/asignar'
 end
 
+ def destroy
+    @user=User.find(params[:id])
+    @user.destroy
+    redirect_to :back
+  end
+
+
   def cuentas
     @users = User.all
         if current_user.role == 'admin'
@@ -74,13 +81,6 @@ def role_chef
   end
 
 
-
-
-  def remove
-    @user=User.find(params[:id])
-    @user.destroy
-    redirect_to :back
-  end
 
   def save
       @users=User.all

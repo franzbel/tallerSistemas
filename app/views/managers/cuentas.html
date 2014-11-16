@@ -1,8 +1,7 @@
-<h1>Gestionar Cuentas</h1>
+<h1><b>Lista de Cuentas</b></h1>
 
 <center>
 
-<h1><b>Cuentas</b></h1>
 <br>
 <a href= "/users/create_user" class="btn btn-success active"><h5><b> -Crear Usuario-</b></h5></a>
 <br>
@@ -20,7 +19,7 @@
 <div class="panel panel-success">
 
       <table class="table table-striped"><thead>
-          <tr class="info">
+          <tr class="danger">
        
           <td><b>Email</b></td>
           <th></th>
@@ -57,7 +56,7 @@
             
               <td></td> 
               <td><h5><a href= "/users/show_user/<%=user.id%>" class="btn btn-info"><b>Ver Usuario</b></h5></a></td>
-              <td><h5><a href= "/users/remove/<%=user.id%>" class="btn btn-danger"><b>Eliminar</b></h5></a></td>
+              <td><h5><a href= "/users/destroy/<%=user.id%>" class="btn btn-danger"><b>Eliminar</b></h5></a></td>
               <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-warning"><b>Editar</b></h5></a></td>  
             <% end %>
             </tr>

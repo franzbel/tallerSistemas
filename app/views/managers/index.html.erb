@@ -1,10 +1,14 @@
-<h1>Administrador</h1>
-
+<h1><b>Administrador</b></h1>
+<br>
+<br>
 <center>
-	<%= link_to 'Gestionar Mesa', tables_path %>
-	<br>
-	<a href= "/cuentas"><h5><b> -Gestionar Cuenta-</b></h5></a>
-	<%= link_to 'Gestionar Menu Comidas', food_menus_path %> <br><br>
-	<%= link_to 'Gestionar Menu Bebidas', drink_menus_path %><br><br>
-	<%= link_to 'Gestionar Recetas', recipes_path %>
+   <div class="btn-group-vertical  btn-group-lg">
+   <a href= "/cuentas" class="btn btn-danger"><h4><b>  Cuenta </b></h4></a>  		
+  <br>
+  <br>
+  <%= link_to '   Mesa   ', tables_path, :class =>"btn btn-danger" %>
+  <br>
+  <br>
+  <%= link_to 'Menu', food_menus_path, :class =>"btn btn-danger" %>
+</div>
 </center>

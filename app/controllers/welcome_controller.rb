@@ -4,13 +4,15 @@ class WelcomeController < ApplicationController
      	 redirect_to '/distributor_chef'
         end
         if user_signed_in? && current_user.role == 'mesero'
-     	 redirect_to '/waiters/index'
+     	  redirect_to '/distributor_mesero'
+        #redirect_to '/waiters/index'
         end
         if user_signed_in? && current_user.role == 'barman'
      	 redirect_to '/distributor_barman'
         end
         if user_signed_in? && current_user.role == 'asistente'
-     	 redirect_to '/helpers/index'
+     	  redirect_to '/distributor_ayudante'
+       #redirect_to '/helpers/index'
         end
         if user_signed_in? && current_user.role == 'admin'
      	 redirect_to '/managers/index'

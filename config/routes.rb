@@ -22,6 +22,8 @@ devise_for :users do
 
 get '/distributor_chef' => 'distributor_chefs#distributor_chef'
 get '/distributor_barman' => 'distributor_chefs#distributor_barman'
+get '/distributor_mesero' => 'distributor_chefs#distributor_mesero'
+get '/distributor_ayudante' => 'distributor_chefs#distributor_ayudante'
 
 
   post '/user/save' => 'managers#save'

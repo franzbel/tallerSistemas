@@ -4,13 +4,18 @@
     <% @comidas.each do |comida| %>
       <div class="panel panel-default">
           <div class="panel-body">
-              <div class="row">
-            <div class="col-xs-3">
-                <label>
-                   <%= check_box_tag 'comida_ids[]', comida.id %> <%= comida.name %>
-                </label>
+           <div class="row">
+            
+            <div class="col-xs-2">
+                    <div class="checkbox">
+                      <label >
+                          <%= check_box_tag 'comida_ids[]', comida.id%><%= comida.name %>
+                      </label>
+                        
+                    </div>  
             </div>  
 
+            
 
             <div class="col-xs-3">
                <label for="cantidades">Cantidad</label>

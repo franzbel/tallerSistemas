@@ -1,3 +1,51 @@
+
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<!--==============================
+            Stuck menu
+=================================-->
+<!--=====================
+          Content
+======================-->
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+          <div class="row">
+            <% @pedidos.each do |pedido| %>
+            <% comidas = pedido.food_menus %>
+            <% comidas.each do |comida| %>
+    
+                <div class="grid_4">
+                  <div class="gall_block">
+                    <div class="maxheight">
+                      <a href="assets/bbig1.jpg" class="gall_item"><%= image_tag("page2_img1.jpg", :alt => "") %><!--<img src="images/page2_img1.jpg" alt="">--></a>
+                      <div class="gall_bot">
+                      <div class="text1"><a href="#">Nombre: <%= comida.name%></a></div>
+                      Observacion: <%= pedido.observation %>
+                      <br>
+                      Para llevar: <%= pedido.takeaway %>
+                      <br>
+                      <a href="#" class="btn">Listo</a></div>
+                    </div>
+                  </div>
+                </div>
+         
+            <%end%>     
+            <% end %>
+          </div>
+  </div>
+</section>    
+
+      
+
+<!--
+
 <br>
 
 <table id="mitabla">
@@ -39,4 +87,4 @@
 
 <br>
 <a href= '/distributor_chef' class="btn btn-default active"><h5><b> Volver </b></h5></a>
-<br>
+<br>-->

@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20141109231942) do
 
   add_index "ingredient_cs", ["recipec_id"], name: "index_ingredient_cs_on_recipec_id"
 
+  create_table "ingredients", force: true do |t|
+    t.string   "ingrediente"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id"
+
   create_table "orders", force: true do |t|
     t.integer  "quantity"
     t.string   "state"
@@ -79,8 +88,15 @@ ActiveRecord::Schema.define(version: 20141109231942) do
   add_index "recipe_ingredients", ["ingredient_c_id"], name: "index_recipe_ingredients_on_ingredient_c_id"
   add_index "recipe_ingredients", ["recipe_c_id"], name: "index_recipe_ingredients_on_recipe_c_id"
 
+  create_table "recipes", force: true do |t|
+    t.string   "name"
+    t.text     "preparation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tables", force: true do |t|
-    t.string   "state"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

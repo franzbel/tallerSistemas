@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<b style="font-size:20px;">
 <div class="hero-unit">
 <p>
-  <h4><span class="label label-danger">Nombre:</span></h4>
+  <h4><span class="label label-danger">Nombre:</span></h4><br>
   <%= @recipe_c.name %>
 </p>
 
 
 
 <p>
-   <h4><span class="label label-danger">Ingredientes:</span></h4>
+   <h4><span class="label label-danger">Ingredientes:</span></h4><br>
 </p>
 <% @recipe_c.recipe_ingredients.each do |m| %>
 <%= m.ingredient_c.name %>
@@ -18,11 +18,11 @@
 
 
 <p>
-   <h4><span class="label label-danger">Preparacion:</span></h4>
+   <h4><span class="label label-danger">Preparacion:</span></h4><br>
   <%= @recipe_c.preparation %>
 </p>
 
 <br>
 </div>
-
+</b>
 <%= link_to 'Volver', recipe_cs_path, :class=> 'btn btn-default active' %>

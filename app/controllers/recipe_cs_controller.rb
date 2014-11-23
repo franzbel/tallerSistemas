@@ -26,6 +26,7 @@ def create_recipec
 
 
 
+
   # GET /recipe_cs/1
   # GET /recipe_cs/1.json
   def show
@@ -46,9 +47,14 @@ def create_recipec
   # POST /recipe_cs.json
   def create
     @recipe_c = RecipeC.new(recipe_c_params)
+    @ingredientes = params[:ingredient_c_id]
+
 
     respond_to do |format|
       if @recipe_c.save
+         @ingredientes.each do |i|
+            RecipeIngredient.create(:recipe_c_id => @recipe_c.id, :ingredient_c_id => i)
+         end 
         format.html { redirect_to @recipe_c, notice: 'Receta creada con exito.' }
         format.json { render action: 'show', status: :created, location: @recipe_c }
       else

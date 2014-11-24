@@ -27,11 +27,20 @@ comidas = FoodMenu.create([{ name: 'Pique Macho', photo: 'pique.jpg',
 		description: 'Carne de pollo y lengua de res, papas, arroz y chunio', price: 35},
 	{name: 'Lapping', photo: 'lapping.jpg',
 		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40},
+	{name: 'Charque', photo: 'charque.jpg',
+		description: 'Filamentos de res desidratado', price: 40},
+	{name: 'Silpancho', photo: 'lapping.jpg',
+		description: 'Carne de res empanizada', price: 40},
 	{name: 'Chajchu', photo: 'chajchu.jpg',
 		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40}])
 
 # MENU BEBIDAS
 
-bebidas = DrinkMenu.create([{name: 'Mojito', photo: 'mojito.png', description: 'ron, limon, menta, hierbabuena', price: 20},
-	{name: 'Margarita', photo: 'margarita.png', description: 'tequila, limon, licor de naranja', price: 20},
+bebidas = DrinkMenu.create([{name: 'Heineken', photo: 'heineken.jpg', description: 'cerveza importada', price: 20},
+	{name: 'Budweiser', photo: 'budweiser.jpg', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'Paulaner', photo: 'paulaner.jpg', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'ron abuelo', photo: 'ronabuelo.jpg', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'ron abuelo 7', photo: 'ronabuelo7.jpg', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'ron abuelo 12', photo: 'ronabuelo12.jpg', description: 'tequila, limon, licor de naranja', price: 20},
+	{name: 'Margarita6', photo: 'margarita.png', description: 'tequila, limon, licor de naranja', price: 20},
 	{name: 'Whisky', photo: 'whisky.png', description: 'Whisky', price: 30}])

@@ -1,5 +1,97 @@
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("mesero.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li ><a href="/waiters/index">mesas</a></li>
+               <!--<li ><a href="/mostrar_menu">menu</a></li>-->
+               <li><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></span></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>    
+<!--=====================
+          Content
+======================-->
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+    <div class="row">
+     <%= form_tag ({controller: "waiters", action: "create_order_drink"}) do %>
+        <% @comidas.each do |comida| %>
+            <div class="grid_4">
+              <div class="gall_block">
+                <div class="maxheight">
+                  <a href="/assets/<%= (((comida.photo.chop).chop).chop).chop+"Grande.jpg" %>" class="gall_item">
+                    <%= image_tag("#{comida.photo}", :alt => "") %><!--<img src="images/page2_img1.jpg" alt="">-->
+                  </a>
+                  <div class="gall_bot">
+                   
+
+                    <div>
+                      <div class="checkbox">
+                        <label >
+                            <%= check_box_tag 'comida_ids[]', comida.id%><%= comida.name %>
+                        </label>
+                        
+                      </div>  
+                    </div>
 
 
+                   
+                    <div>
+                        <label for="cantidades">Cantidad</label>
+                        <%= number_field_tag 'cantidades[]', 0, :class =>"form-control", :placeholder => "col-xs-3"%>
+                    </div>  
+
+                    <div>
+                      <label for="observacion">Nota</label>
+                        <%= text_area_tag 'observacion[]',' ',   :class =>"form-control", :placeholder => "col-xs-3" %> 
+                    </div>                    
+                    
+                    <div>
+                      <%= hidden_field_tag 'llevar[]', 'no' %> 
+                      
+                      <%= hidden_field_tag 'mesa_ids[]', @mesa.id %> 
+                    </div>  
+                    
+                  </div>  
+                  </div>
+              </div>
+            </div>
+          <%end%>
+        <%= submit_tag 'Pedir bebida', :class=>"btn btn-primary"%>
+        <%end%>
+     
+    </div>
+  </div>
+</section>
+<!--
 <div id="mesas">
 
   <%= form_tag ({controller: "waiters", action: "create_order_drink"}) do %>
@@ -39,7 +131,7 @@
     <%= submit_tag 'Pedir bebida', :class=>"btn btn-primary"%>
   <% end %>
   
-</div>
+</div>-->
 
 
 

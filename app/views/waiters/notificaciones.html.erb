@@ -1,0 +1,75 @@
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("marca.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li><a href="/waiters/index">mesas</a></li>
+               <!--<li ><a href="/mostrar_menu">menu</a></li>-->
+               <li class="current"><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>        
+
+<!--=====================
+          Content
+======================-->
+<h2>Notificaciones del chef</h2>
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+    <div class="row">
+       <% @tables.each do |mesa| %>
+            <%  pedidos = mesa.orders %>
+            <% pedidos.each do |pedido|%>
+              <% if pedido.state=="comida lista"%>
+                <% comida = pedido.food_menus%>
+                <p class="texto" style="color: green; font-weight: bold;"><%= pedido.state %> de la mesa <%=mesa.id%></p>
+              <%end%>
+            <%end%>
+       <%end%>
+    </div>
+  </div>
+</section>
+
+<h2>Notificaciones del barman</h2>
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+    <div class="row">
+       <% @tables.each do |mesa| %>
+            <%  pedidos = mesa.orders %>
+            <% pedidos.each do |pedido|%>
+              <% if pedido.state=="bebida lista"%>
+                <% comida = pedido.food_menus%>
+                <p class="texto" style="color: green; font-weight: bold;"><%=pedido.state%> de la mesa <%=mesa.id%></p>
+              <%end%>
+            <%end%>
+       <%end%>
+    </div>
+  </div>
+</section>

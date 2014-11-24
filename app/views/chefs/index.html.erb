@@ -24,11 +24,7 @@
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li><a href="/">inicio</a></li>
-               <li class="current"><a href="/mostrar_menu">menu</a></li>
-               <li><a href="index-2.html">reservation</a></li>
-               <li><a href="index-3.html">blog</a></li>
-               <li><a href="/contacto">contacts</a></li>
+               
              </ul>
             </nav>        
             <div class="clear"></div>
@@ -59,7 +55,7 @@
                   <div class="text1">Numero de mesa: <%= pedido.table_id %></div>
                   <div class="text1">Observacion: <%= pedido.observation %></div>
                   <br>
-                  <%= link_to 'listo', delivery_path(pedido), class:"btn" %></div>
+                  <%= link_to 'notificar listo', delivery_path(pedido), class:"btn" %></div>
                  
                 </div>
               </div>

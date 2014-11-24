@@ -41,6 +41,4 @@ bebidas = DrinkMenu.create([{name: 'Heineken', photo: 'heineken.jpg', descriptio
 	{name: 'Paulaner', photo: 'paulaner.jpg', description: 'tequila, limon, licor de naranja', price: 20},
 	{name: 'ron abuelo', photo: 'ronabuelo.jpg', description: 'tequila, limon, licor de naranja', price: 20},
 	{name: 'ron abuelo 7', photo: 'ronabuelo7.jpg', description: 'tequila, limon, licor de naranja', price: 20},
-	{name: 'ron abuelo 12', photo: 'ronabuelo12.jpg', description: 'tequila, limon, licor de naranja', price: 20},
-	{name: 'Margarita6', photo: 'margarita.png', description: 'tequila, limon, licor de naranja', price: 20},
-	{name: 'Whisky', photo: 'whisky.png', description: 'Whisky', price: 30}])
+	{name: 'ron abuelo 12', photo: 'ronabuelo12.jpg', description: 'tequila, limon, licor de naranja', price: 20}])

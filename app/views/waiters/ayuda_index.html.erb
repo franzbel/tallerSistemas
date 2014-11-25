@@ -1,0 +1,90 @@
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("mesero_ayuda.jpg", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li ><a href="/waiters/index">mesas</a></li>
+               <li class="current"><a href="/waiters/ayuda_index">ayuda</a></li>
+               <li><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></span></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header> 
+<section>
+	<article style="float:left">
+		<h2 >Bienvenido a la ayuda de la pagina principal de tu aplicacion</h2>
+		<h1>Aca encontraras informacion referente a la administracion de las mesas de nuestro restaurant..... comencemos</h1> 	
+		<h2>Una lista de todas nuestras mesas</h2>
+		<h1>Al ingresar a esta pagina encontraras una lista de todas las mesas del restaurant</h1>
+		<div style="float:left;margin-right: 2em;">
+          		<%= image_tag("mesero_index.jpg", size: "360x360") %>
+   		</div>
+
+   		<h1 style=" line-height: 120%;text-align: justify;"><br><br>Observa que para identificar cada mesa, en cada imagen hemos puesto un munero, el cual se corresponde con el numero de la mesa.</h1><br> 
+   		<h1 style=" line-height: 120%;text-align: justify;">Al hacer click sobre una de estas imagenes podras ver una nueva pagina, en la que podras ver una lista de opciones que te permitiran tomar una orden, revisar la lista de pedidos actuales de dicha mesa, llamar a un asistente para que la mesa sea limpiada, etc.</h1>
+    	
+
+	</article>
+	<article style="float:left">
+		<h2 >Acerca de los colores de las mesas</h2>	
+		<h1 style=" line-height: 120%;;text-align: justify;">No olvides que cada color representa un estado de la mesa. Como no son muchas combinaciones, recordarlas no sera muy dificil para ti. Ahora revisaremos estos colores y lo que significa cada uno de ellos, comencemos</h1><br>
+	</article>
+	<article style="float:left;">
+		<div style="float:left;margin-right: 2em;">
+          		<%= image_tag("color_verde.jpg", size: "120x140") %>
+   		</div>
+   		<h1 style=" line-height: 120%;text-align: justify;">La mesa esta libre. Es decir la mesa esta desocupada, esta perfectamente acomodada y limpia.... es una mesa lista para recibir un cliente sasa as sa sa sa sa sasa sa sa s sas sa asa sa sas sa sa sasasas.</h1>	
+   		
+    	
+	</article>	
+	<article style="float:left">
+		<div style="float:left;margin-right: 2em;">
+          		<%= image_tag("color_azul.jpg", size: "120x140") %>
+   		</div>
+   		
+   		<h1 style=" line-height: 120%;text-align: justify;">La mesa esta libre. Es decir la mesa esta desocupada, esta perfectamente acomodada y limpia.... es una mesa lista para recibir un cliente sasa as sa sa sa sa sasa sa sa s sas sa asa sa sas sa sa sasasas.</h1>	
+   		
+    	
+	</article>
+	<article style="float:left">
+		<div style="float:left;margin-right: 2em;">
+          		<%= image_tag("color_naranja.jpg", size: "120x140") %>
+   		</div>
+    	<h1 style=" line-height: 120%;text-align: justify;">La mesa esta libre. Es decir la mesa esta desocupada, esta perfectamente acomodada y limpia.... es una mesa lista para recibir un cliente sasa as sa sa sa sa sasa sa sa s sas sa asa sa sas sa sa sasasas.</h1>
+	</article>
+	<article style="float:left">
+		<div style="float:left;margin-right: 2em;">
+          		<%= image_tag("color_rojo.jpg", size: "120x140") %>
+   		</div>
+    	<h1 style=" line-height: 120%;text-align: justify;">La mesa esta libre. Es decir la mesa esta desocupada, esta perfectamente acomodada y limpia.... es una mesa lista para recibir un cliente sasa as sa sa sa sa sasa sa sa s sas sa asa sa sas sa sa sasasas.</h1>
+	</article>
+	
+	
+</section>
+ 

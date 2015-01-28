@@ -21,17 +21,17 @@ main_admin = User.create(:email => 'chef@gmail.com', :password => '12345678',
 
 # MENU COMIDAS
 
-comidas = FoodMenu.create([{ name: 'Pique Macho', photo: 'pique.jpg', 
+comidas = FoodMenu.create([{ name: 'Pique Macho', photo: 'plato4.jpg', 
 		description: 'Carne de res, salchicha, papas, huevo, rodajas de pimiento y tomate', price: 50},
-	{name: 'Picante', photo: 'picante.jpg',
+	{name: 'Picante de pollo', photo: 'plato5.jpg',
 		description: 'Carne de pollo y lengua de res, papas, arroz y chunio', price: 35},
-	{name: 'Lapping', photo: 'lapping.jpg',
+	{name: 'Lapping', photo: 'plato3.jpg',
 		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40},
-	{name: 'Charque', photo: 'charque.jpg',
+	{name: 'Picante de lengua', photo: 'plato6.jpg',
 		description: 'Filamentos de res desidratado', price: 40},
-	{name: 'Silpancho', photo: 'lapping.jpg',
+	{name: 'Picante mixto', photo: 'plato2.jpg',
 		description: 'Carne de res empanizada', price: 40},
-	{name: 'Chajchu', photo: 'chajchu.jpg',
+	{name: 'Chajchu', photo: 'plato1.jpg',
 		description: 'Pecho de vaca asada, habas, choclo, papa, ensalada', price: 40}])
 
 # MENU BEBIDAS

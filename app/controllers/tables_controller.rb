@@ -4,7 +4,8 @@ class TablesController < ApplicationController
   # GET /tables
   # GET /tables.json
   def index
-    @tables = Table.all
+    @tables = Table.order('tables.id ASC').all
+    
   end
 
   # GET /tables/1

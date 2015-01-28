@@ -17,7 +17,7 @@
         <div class="grid_12">
         <h1>
           <a href="index.html">
-          <%= image_tag("mesero.png", :alt => "Logo alt") %> 
+          <%= image_tag("marca.png", :alt => "Logo alt") %> 
             <!--<img src="images/logo.png" alt="Logo alt">-->
           </a>
         </h1>  
@@ -92,11 +92,12 @@
   <div class="container">
     <div class="row">
       <%= form_tag ({controller: "waiters", action: "create_order"}) do %>
+      <% cont=1%>
         <% @comidas.each do |comida| %>
             <div class="grid_4">
               <div class="gall_block">
                 <div class="maxheight">
-                  <a href="/assets/bbig1.jpg" class="gall_item"><%= image_tag("page2_img1.jpg", :alt => "") %><!--<img src="images/page2_img1.jpg" alt="">--></a>
+                  <a href="/assets/bbig1.jpg" class="gall_item"><%= image_tag("#{comida.photo}", :alt => "") %><!--<img src="images/page2_img1.jpg" alt="">--></a>
                   <div class="gall_bot">
                    
 
@@ -113,7 +114,7 @@
                    
                     <div>
                         <label for="cantidades">Cantidad</label>
-                        <%= number_field_tag 'cantidades[]', 0, :class =>"form-control", :placeholder => "col-xs-3"%>
+                        <%= number_field_tag 'cantidades[]', 0, :class =>"form-control", :placeholder => "col-xs-3" , in: 0...10%>
                     </div>  
 
                     <div>
@@ -133,6 +134,7 @@
                   </div>
               </div>
             </div>
+            <%cont=cont+1%>
           <%end%>
         <%= submit_tag 'Pedir comida', :class=>"btn btn-primary"%>
         <%end%>

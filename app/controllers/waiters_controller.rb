@@ -155,7 +155,7 @@ class WaitersController < ApplicationController
 	  	@mesa = Table.find(params[:mesa_ids].first.to_i)
 	  	@mesa.state = "ocupada"
 	  	@mesa.save
-	  	
+	  	if  !params[:comida_ids].nil?
 	  	params[:comida_ids].each do |f|
 	  		
 	  		@comida=DrinkMenu.where(:id => f)
@@ -170,6 +170,7 @@ class WaitersController < ApplicationController
 	  		cont =cont + 1
 	  		@order.drink_menus<<@comida
 	  	end
+	  end
 	  	redirect_to waiters_index_path
 	end
 	def create_order
@@ -199,6 +200,7 @@ class WaitersController < ApplicationController
 	  	@mesa = Table.find(params[:mesa_ids].first.to_i)
 	  	@mesa.state = "ocupada"
 	  	@mesa.save
+	  	if	!params[:comida_ids].nil? 
 	  	
 	  	params[:comida_ids].each do |f|
 	  		
@@ -214,6 +216,7 @@ class WaitersController < ApplicationController
 	  		cont =cont + 1
 	  		@order.food_menus<<@comida
 	  	end
+	  end
 	  	redirect_to waiters_index_path
 	end
 def serving_food

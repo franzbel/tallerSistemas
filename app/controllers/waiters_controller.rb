@@ -1,4 +1,16 @@
 class WaitersController < ApplicationController
+	def ayuda_index
+		@tables = Table.all
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
+	end
 	def notificaciones
 		@tables = Table.all	
 

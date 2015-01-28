@@ -55,11 +55,10 @@
                     <% if a % 5 == 0 %>
 
                      <div style="width:90px;">
-                      <% if check_box_tag checked: "checked" %>
-                          <%= check_box_tag "ingredient_c_id[]", i.id, checked: "checked" %>
-                      <%else%>
+                     
+                      
                      <%= check_box_tag "ingredient_c_id[]", i.id %>
-                     <% end %>
+                    
                     <%= i.name %>
                   </div>
                     <br>

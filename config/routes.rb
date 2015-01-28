@@ -48,6 +48,9 @@ get '/recipes/destroy/:id' => 'recipes#destroy'
   get "waiters/index"
   get "waiters/notificaciones"
   
+  get "waiters/ayuda_index"
+
+
   get "waiters/opciones/:id" => 'waiters#opciones', as: :opciones  
   get "waiters/ocupar_mesa/:id" => 'waiters#ocupar_mesa', as: :ocupar_mesa 
   get "waiters/pedido_mesa/:id" => 'waiters#pedido_mesa', as: :pedido_mesa  

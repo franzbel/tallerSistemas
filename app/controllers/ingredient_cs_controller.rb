@@ -28,7 +28,7 @@ class IngredientCsController < ApplicationController
 
     respond_to do |format|
       if @ingredient_c.save
-        format.html { redirect_to @ingredient_c, notice: 'Ingredient c was successfully created.' }
+        format.html { redirect_to @ingredient_c, notice: 'Ingrediente creado.' }
         format.json { render action: 'show', status: :created, location: @ingredient_c }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class IngredientCsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient_c.update(ingredient_c_params)
-        format.html { redirect_to @ingredient_c, notice: 'Ingredient c was successfully updated.' }
+        format.html { redirect_to @ingredient_c, notice: 'Ingrediente correctamente actualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

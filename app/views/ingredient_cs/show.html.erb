@@ -1,9 +1,11 @@
+<br>
 <p id="notice"><%= notice %></p>
-
+<b style="font-size:25px;">
 <p>
-  <h4><span class="label label-danger">Nombre:</span></h4>
+  <h4><span class="label label-danger">Nombre:</span></h4><br>
   <%= @ingredient_c.name %>
 </p>
+</b>
 <br>
-<%= link_to 'Volver Ingredientes', ingredient_cs_path, :class=> 'btn btn-default active' %> |
-<%= link_to 'Volver Recetas', new_recipe_c_path, :class=> 'btn btn-default active' %>
+<%= link_to 'Volver', new_recipe_c_path, :class=> 'btn btn-default active' %> 
+<%= link_to 'Ver Ingredientes', ingredient_cs_path, :class=> 'btn btn-default active' %>

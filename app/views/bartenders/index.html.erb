@@ -1,3 +1,73 @@
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("marca.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>        
+
+<!--=====================
+          Content
+======================-->
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+    <div class="row">
+        <% @pedidos.each do |pedido| %>
+          <% comida=pedido.drink_menus %>
+          <% comida.each do |comida| %>
+            <div class="grid_4">
+              <div class="gall_block">
+                <div class="maxheight">
+                  <a href="/assets/<%= (((comida.photo.chop).chop).chop).chop+"Grande.jpg" %>" class="gall_item"><%= image_tag("#{comida.photo}", :alt => "") %><!--<%= image_tag("page2_img1.jpg", :alt => "") %>--><!--<img src="images/page2_img1.jpg" alt="">--></a>
+                  <div class="gall_bot">
+                  <div class="text1"><a href="#">Bebida: <%= comida.name%> </a></div>
+                  <div class="text1">Cantidad: <%= pedido.quantity %></div>
+                  <div class="text1">Numero de mesa: <%= pedido.table_id %></div>
+                  <div class="text1">Observacion: <%= pedido.observation %></div>
+                 
+                  <br>
+                  <%= link_to 'notificar listo', drink_delivery_path(pedido), class:"btn" %></div>
+                 
+                </div>
+              </div>
+            </div>
+          <%end%>
+        <%end%>
+     
+    </div>
+  </div>
+</section>
+
+<!--
 <table id="mitabla">
   <thead>
     <tr>
@@ -30,4 +100,4 @@
 
 <br>
 <a href= '/distributor_barman' class="btn btn-default active"><h5><b> Volver </b></h5></a>
-<br>
+<br>-->

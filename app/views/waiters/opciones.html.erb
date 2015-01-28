@@ -1,5 +1,35 @@
-
-<div id="mesas">
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("mesero.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li ><a href="/waiters/index">mesas</a></li>
+               <!--<li ><a href="/mostrar_menu">menu</a></li>-->
+               <li><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></span></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>     
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+      <div id="mesas">
   <a href="/waiters/take_order/<%= @mesa.id%>">
     <div  class="contenedor" id="limpieza">
       <%= image_tag("pedircomida.png", :class => "icon") %>
@@ -19,11 +49,11 @@
       <%= image_tag("pedidos.png", :class => "icon") %>
       <p class="texto">PEDIDOS ACTUALES</p>
     </div>
-  </a>  
+  </a>  <!--
   <div class="contenedor" id="limpieza">
    <%= image_tag("cuenta.png", :class => "icon") %>
     <p class="texto">CUENTA</p>
-  </div>
+  </div>-->
 
   <a href="/waiters/set_table/<%= @mesa.id%>">
     <div class="contenedor" id="limpieza">
@@ -38,4 +68,6 @@
     </div>  
   </a>
   
-</div>
+</div>  
+  </div>
+</section>

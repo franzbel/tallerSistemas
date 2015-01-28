@@ -1,13 +1,59 @@
 class WaitersController < ApplicationController
-	def index
+	def notificaciones
 		@tables = Table.all	
+
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
+		#render text: @tables.first.id
 	end
+	def index
+		@tables = Table.all
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
+
+	end
+
+	
 	def opciones
 		@mesa=Table.find(params[:id])
+		@tables = Table.all	
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
 	end
 
 	def pedido_mesa
-		@pedido_mesa=Order.where(:state => 'en proceso').where(:table_id => params[:id])
+		@pedido_mesa=Order.where('state=? OR state=? OR state=?',  'en proceso', 'comida lista', 'bebida lista').where(:table_id => params[:id])
+		@tables = Table.all	
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
 		
 	end
 	def edit
@@ -43,10 +89,31 @@ class WaitersController < ApplicationController
 	def take_order
 	  	@mesa=Table.find(params[:id])
 	  	@comidas = FoodMenu.all
+	  	@tables = Table.all
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
 	end
 	def take_drink_order
 	  	@mesa=Table.find(params[:id])
 	  	@comidas = DrinkMenu.all
+	  	@tables = Table.all	
+
+		@numero_notificaciones=0	
+		@tables.each do |mesa| 
+          pedidos = mesa.orders
+            pedidos.each do |pedido|
+              if (pedido.state=="comida lista" || pedido.state=="bebida lista")
+                @numero_notificaciones=@numero_notificaciones+1;
+      		  end
+            end
+      	end
   	end
 
 	def create_order_drink
@@ -141,12 +208,14 @@ def serving_food
   	@order = Order.find(params[:id])
   	@order.state="servido"
   	@order.save
-  	redirect_to waiters_index_path
+    redirect_to pedido_mesa_path(@order.table_id)
+  	#redirect_to waiters_index_path
   end
 	def set_table
 	  	@mesa = Table.find(params[:id])
 	  	@mesa.state = "limpieza"
 	  	@mesa.save
+
 	  	redirect_to waiters_index_path
 	end
 end

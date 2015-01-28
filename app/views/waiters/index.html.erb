@@ -1,32 +1,74 @@
+<script>
+ $(document).ready(function(){
 
-<h2>LISTAR MESAS</h2>
-<div id="mesas">
-  <% @tables.each do |mesa| %>
-    <% if mesa.state == "libre" %>
-    <a href="opciones/<%= mesa.id%>">
-      <div class="contenedor" id="libre">
-       <%= image_tag("table.png", :class => "icon") %>
-     <!-- <img class="icon" src="assets/table.png">     -->
-      <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("mesero.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li class="current"><a href="/waiters/index">mesas</a></li>
+               <!--<li ><a href="/mostrar_menu">menu</a></li>-->
+               <li><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></span></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
       </div>
-          
-    </a>
+    </div>
+  </section> 
+</header>        
+<section class="content gallery pad1"><div class="ic"></div>
+  <div class="container">
+      <div id="mesas">
+  <% @tables.each do |mesa| %>
+    <%  pedidos = mesa.orders %>
+    <% if mesa.state == "libre" %>
+      <a href="opciones/<%= mesa.id%>">
+        <div class="contenedor" id="libre">
+         <%= image_tag("#{mesa.id}.png", :class => "icon") %>
+         
+       <!-- <img class="icon" src="assets/table.png">     -->
+        <p class="texto"><%= mesa.state%></p>
+        </div>
+
+      </a>
     <% end %>
     
     <% if mesa.state == "ocupada"%>      
       <a href="opciones/<%= mesa.id%>">
         <div class="contenedor" id="ocupada">
-          <%= image_tag("table.png", :class => "icon") %>
-          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+          <%= image_tag("#{mesa.id}.png", :class => "icon") %>
+          <p class="texto"><%= mesa.state%></p>
+          
         </div>
+
       </a>  
     <% end %>
     
     <% if mesa.state == "limpieza"%>
       <a href="opciones/<%= mesa.id%>">
         <div class="contenedor" id="limpieza">
-          <%= image_tag("table.png", :class => "icon") %>     
-          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+          <%= image_tag("#{mesa.id}.png", :class => "icon") %>     
+          <p class="texto"><%= mesa.state%></p>
         </div>
       </a>
     <% end %>
@@ -34,10 +76,33 @@
     <% if mesa.state == "reservada"%>
       <a href="opciones/<%= mesa.id%>">
         <div class="contenedor" id="reservada">
-          <%= image_tag("table.png", :class => "icon") %>     
-          <p class="texto"><%= mesa.state%><%= mesa.id%></p>
+          <%= image_tag("#{mesa.id}.png", :class => "icon") %>     
+          <p class="texto"><%= mesa.state%></p>
       </div>
       </a>
     <% end %>
   <% end %>
 </div>
+  
+</div>
+
+ 
+</section>
+
+   
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">  <!--
+        <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+          <a href="#" class="fa fa-pinterest"></a>-->
+        </div>
+        <div class="copyright"><span class="brand">Taller de sistemas </span> &copy; <span id="copyright-year"></span> | <a href="#">Politica de privacidad</a> <div>Contactenos en <a href="https://www.facebook.com/erika.vargas.35728" target="_blank" class="brand">Ericka vargas</a>. | <a href="https://www.facebook.com/franz.beltran.mercado" title="Themes for Joomla" class="brand">Franz Beltran</a></div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</footer> 

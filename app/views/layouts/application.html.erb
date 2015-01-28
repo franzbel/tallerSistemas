@@ -20,7 +20,6 @@
           Registrado como <%= current_user.email %>. No es usted?
           <%= link_to "Cerrar Sesion", destroy_user_session_path, :class => "btn btn-xs btn-danger active" %>
         <% else %>
-          <%= link_to "Registrarse", new_user_registration_path, :class => "btn btn-xs btn-info active" %> 
           <%= link_to "Iniciar Sesion", new_user_session_path, :class => "btn btn-xs btn-success active" %>
         <% end %>
       </div>

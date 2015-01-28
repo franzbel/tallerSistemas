@@ -1,8 +1,8 @@
-<h1><b>Lista de Cuentas</b></h1>
+<h1><b style="font-size:37px; color:red">Lista de Cuentas</b></h1>
 
 <center>
 
-<DIV ALIGN=left><p id="notice"><%= notice%></p>
+<DIV ALIGN=left>
 <br>
 <a href= "/users/create_user" class="btn btn-default"><h5><b> Crear Usuario</b></h5></a>
 <br>
@@ -60,7 +60,6 @@
               <td><h5><a href= "/users/show_user/<%=user.id%>" class="btn btn-info"><b>Ver</b></h5></a></td>
              <td><%= link_to 'Eliminar', destroy_path(user.id), :class =>"btn btn-danger", method: :delete, data: { confirm: 'Esta seguro de eliminar este usuario?' } %></td>
 
-              <td><h5><a href= "/users/edit_user/<%=user.id%>" class="btn btn-warning"><b>Editar</b></h5></a></td>  
             <% end %>
             </tr>
           <% end %>

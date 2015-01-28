@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+.ingredientes1 {
+	float: left;
+}
+
+.ingredientes2 {
+	float: left;
+}

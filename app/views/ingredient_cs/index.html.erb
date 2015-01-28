@@ -1,5 +1,10 @@
-<center><h1><b style="font-size:27px;">  Lista De Ingredientes </b></h1></center> 
-<br>
+<center><h1><b style="font-size:37px; color:red">  Lista De Ingredientes </b></h1></center> 
+
+<DIV ALIGN=left>
+
+<a href= '/distributor_chef' class="btn btn-default active"><h5> Volver </h5></a>
+
+</DIV>
 
 <DIV ALIGN=right>
 <%= link_to 'Registrar Ingrediente', new_ingredient_c_path, :class=> 'btn btn-default active' %> 
@@ -13,14 +18,19 @@
       <table class="table table-striped"><thead>
           <tr class="danger">
 
-
+      <th></th>
       <th></th>      
       <th>Nombre</th>
       <th></th>  
-      <th></th>    
-      <th><b align ="center">Opciones</b></th>
-
       <th></th>
+      <th>
+        <DIV ALIGN=right>
+            <b align ="right">Opciones</b>
+        </DIV>
+
+        </th>
+      <th></th>
+      
     </tr>
   </thead>
 
@@ -29,10 +39,13 @@
      <% @ingredient_cs.each do |ingredient_c| %>
       <tr>
         <td></td>
+
+        <td></td>
         <td><%= ingredient_c.name %></td>
         <td></td>
-        <td><%= link_to 'Edit', edit_ingredient_c_path(ingredient_c) , :class =>"btn btn-danger"%></td>
         <td></td>
+        <td><%= link_to 'Editar', edit_ingredient_c_path(ingredient_c) , :class =>"btn btn-danger"%></td>
+        
         <td><%= link_to 'Eliminar', ingredient_c, :class =>"btn btn-danger", method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %> 
@@ -43,8 +56,3 @@
 </b>
 <br>
 
-
-
-<br>
-<a href= '/distributor_chef' class="btn btn-default active"><h5><b> Volver </b></h5></a>
-<br>

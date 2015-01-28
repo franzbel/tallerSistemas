@@ -1,4 +1,83 @@
+<script>
+ $(document).ready(function(){
 
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+          <%= image_tag("mesero.png", :alt => "Logo alt") %> 
+            <!--<img src="images/logo.png" alt="Logo alt">-->
+          </a>
+        </h1>  
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li ><a href="/waiters/index">mesas</a></li>
+               <!--<li ><a href="/mostrar_menu">menu</a></li>-->
+               <li><a href="/waiters/notificaciones">notificaciones   <span class="badge"><%= @numero_notificaciones %></span></a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>   
+
+<section class="content gallery pad1"><div class="ic"></div>
+  <h2>COMIDAS</h2>
+  <div class="container">
+    <div class="row">
+        <% @pedido_mesa.each do |pedido| %>
+          <% comidas = pedido.food_menus %>
+          <% comidas.each do |comida| %>
+            <div class="grid_4">
+              <div class="gall_block">
+                <div class="maxheight">
+                  <a  href="/waiters/edit/<%= pedido.id%>">
+                        <%= image_tag("#{comida.photo}", :class => "media-object") %>
+                  </a>
+
+                  <div class="gall_bot">
+                  <div class="text1"><%= comida.name%></div>
+                  <div class="text1">Cantidad: <%= pedido.quantity %></div>
+                  <div class="text1">Para llevar: <%= pedido.takeaway %></div>
+                  <div class="text1">Mesa: <%= pedido.table_id %></div>
+                  <div class="text1">Observacion: <%= pedido.observation %></div>
+                  <div class="text1">Estado: <%= pedido.state %></div>
+                  <br>
+                  
+                  
+                      <% if pedido.state == "comida lista"%>
+                           <%= link_to 'SERVIR', serving_food_path(pedido), class:"btn"  %>
+                      
+                      <%else%>
+                          <%= link_to 'CANCELAR', cancelar_path(pedido), class:"btn"  %>
+                      <%end%>  
+                      </div>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        <%end%>
+     
+    </div>
+  </div>
+</section> 
+ <!--
  <% @pedido_mesa.each do |pedido| %>
         <% comidas = pedido.food_menus %>
         <% comidas.each do |comida| %>
@@ -14,6 +93,10 @@
                       <h4 class="media-heading">ESTADO: <%= pedido.state %></h4>
                       <h4 class="media-heading">NOTA: <%= pedido.observation %></h4>
                       <%= link_to 'CANCELAR', cancelar_path(pedido) %>
+                      <% if pedido.state == "comida lista"%>
+                          | <%= link_to 'SERVIR', serving_food_path(pedido) %>
+                      <%end%>
+                      
                       
                     </div>
                 </div>
@@ -35,11 +118,51 @@
                       <h4 class="media-heading">PARA LLEVAR: <%= pedido.takeaway %></h4>
                       <h4 class="media-heading">ESTADO: <%= pedido.state %></h4>
                       <%= link_to 'CANCELAR', cancelar_path(pedido) %>
+                      <% if pedido.state == "bebida lista"%>
+                          | <%= link_to 'SERVIR', serving_food_path(pedido) %>
+                      <%end%>
+                      
                     </div>
                 </div>
             </div>
         <%end%>     
-<%end%> 
+<%end%> -->
+<section class="content gallery pad1"><div class="ic"></div>
+<h2>BEBIDAS</h2>
+  <div class="container">
+    <div class="row">
+        <% @pedido_mesa.each do |pedido| %>
+          <% comidas = pedido.drink_menus %>
+          <% comidas.each do |comida| %>
+            <div class="grid_4">
+              <div class="gall_block">
+                <div class="maxheight">
+                  <a  href="/waiters/edit/<%= pedido.id%>">
+                        <%= image_tag("#{comida.photo}", :class => "media-object") %>
+                  </a>
+                  <div class="gall_bot">
+                  <div class="text1"><%= comida.name%></div>
+                  <div class="text1">Cantidad: <%= pedido.quantity %></div>
+                  
+                  <div class="text1">Mesa: <%= pedido.table_id %></div>
+                  <div class="text1">Estado: <%= pedido.state %></div>
+                  <br>
+                 
+                  <% if pedido.state == "bebida lista"%>
+                           <%= link_to 'SERVIR', serving_food_path(pedido), class:"btn"  %>
+                  <%else%>
+                          <%= link_to 'CANCELAR', cancelar_path(pedido), class:"btn"  %>
+                  <%end%> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        <%end%>
+     
+    </div>
+  </div>
+</section> 
 
 
 
